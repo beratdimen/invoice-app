@@ -7,8 +7,18 @@
 .city {
   display: flex;
   gap: 23px;
-  div{
+
+  div {
     display: grid;
     gap: 9px;
   }
+}
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: #7e88c3;
 }
