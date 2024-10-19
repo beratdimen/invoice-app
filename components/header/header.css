@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(55, 59, 83, 1);
+  padding-right: 24px;
+  gap: 24px;
+}
+
+header img:last-child {
+  width: 32px;
+  height: 32px;
+}
+header img:nth-child(2) {
+  width: 19px;
+  height: 19px;
+}
+header img:first-child {
+  margin-right: auto;
+  width: 72px;
+  height: 72px;
+}
+
+.line {
+  border-right: 1px solid rgba(73, 78, 110, 1);
+  height: 72px;
+}
+
+
