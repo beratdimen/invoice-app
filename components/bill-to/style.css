@@ -24,6 +24,9 @@
   .citiesContent {
     display: flex;
     gap: 24px;
+    input {
+      width: 100%;
+    }
   }
 }
 

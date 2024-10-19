@@ -1,14 +1,9 @@
-import BillTo from "@/components/bill-to";
-
-import BillForm from "@/components/bill-form";
-import InvoiceAddPage from "./fatura-ekleme/page";
-import InvoiceCard from "@/components/invoice-card";
+import InvoicePAge from "./invoice/page";
 
 export default function Home() {
   return (
     <>
-      <InvoiceAddPage />
-      <InvoiceCard />
+      <InvoicePAge />
     </>
   );
 }

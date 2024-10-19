@@ -1,0 +1,57 @@
+.invoiceOverview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.addInvoiceContainer {
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 24px;
+
+    h2 {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 22.08px;
+      letter-spacing: -0.75px;
+      text-align: left;
+      color: #0c0e16;
+
+      span {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: -0.10000000149011612px;
+        text-align: left;
+        color: #888eb0;
+      }
+    }
+
+    button {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+  }
+}
+
+.commentsRightSideBar {
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 1s ease;
+  width: fit-content;
+
+  button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}
