@@ -1,3 +1,25 @@
 body {
   font-family: system-ui;
 }
+
+h3 {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  color: #7c5dfa;
+}
+
+input,
+select {
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: #0c0e16;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  border: 1px solid #dfe3fa;
+}

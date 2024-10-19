@@ -2,7 +2,7 @@ import "./style.css";
 export default function BillTo() {
   return (
     <div className="billTo">
-      <h3>Bill To</h3>
+      <h3>Fatura Sahibi</h3>
       <label htmlFor="userName">
         Müşteri Adı
         <input type="text" name="userName" placeholder="Ad" id="userName" />
@@ -64,8 +64,9 @@ export default function BillTo() {
         Ödeme Koşulları
         <select name="paymentDate" id="">
           <option value="">Önümüzdeki 30 Gün</option>
-          <option value="">Önümüzdeki 15 Gün</option>
-          <option value="">Önümüzdeki 10 Gün</option>
+          <option value="">Önümüzdeki 14 Gün</option>
+          <option value="">Önümüzdeki 7Gün</option>
+          <option value="">Önümüzdeki 1 Gün</option>
         </select>
       </label>
 
