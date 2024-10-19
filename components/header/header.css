@@ -7,18 +7,24 @@ header {
   gap: 24px;
 }
 
-header img:last-child {
+.userAvatar {
   width: 32px;
   height: 32px;
 }
-header img:nth-child(2) {
+.darkmode {
   width: 19px;
   height: 19px;
 }
-header img:first-child {
+.logo {
   margin-right: auto;
   width: 72px;
   height: 72px;
+}
+
+.options {
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 
 .line {
@@ -26,4 +32,23 @@ header img:first-child {
   height: 72px;
 }
 
+@media (width >=768px) {
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+  .line {
+    border-right: none;
+    border-bottom: 1px solid rgba(73, 78, 110, 1);
+    height: 72px;
+  }
+}

@@ -1,13 +1,19 @@
-import css from './header.css'
+import "./header.css";
 
-export default function Header(){
-
-  return(
+export default function Header() {
+  return (
     <header>
-      <img src="../img/logo.png" alt="logo" />
-      <img src="../img/darkMode.png" alt="darkmode logo" />
-      <div className="line"></div>
-      <img src="../img/user.png" alt="user pic" />
+      <img className="logo" src="../img/logo.png" alt="logo" />
+
+      <div className="options">
+        <img
+          className="darkmode"
+          src="../img/darkMode.png"
+          alt="darkmode logo"
+        />
+        <div className="line"></div>
+        <img className="userAvatar" src="../img/user.png" alt="user pic" />
+      </div>
     </header>
-  )
+  );
 }
