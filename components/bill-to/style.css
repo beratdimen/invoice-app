@@ -1,0 +1,43 @@
+.billTo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    text-align: left;
+    color: #7c5dfa;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: -0.10000000149011612px;
+    text-align: left;
+    color: #7e88c3;
+    input,
+    select {
+      padding: 15px 20px;
+      border-radius: 4px;
+      color: #0c0e16;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 15px;
+      letter-spacing: -0.25px;
+      text-align: left;
+      border: 1px solid #dfe3fa;
+    }
+  }
+
+  .cities {
+    display: flex;
+    gap: 24px;
+  }
+}
