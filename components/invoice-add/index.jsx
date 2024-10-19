@@ -30,9 +30,9 @@ export default function AddInvoice() {
                 Invoices <span>7 invoices</span>
               </h2>
               <div className="btns">
-                <a>
+                <h6>
                   Filter <DownIcon />
-                </a>
+                </h6>
                 <div className="filter">
                   <p>
                     <input type="checkbox" name="" id="" /> Draft
