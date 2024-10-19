@@ -1,63 +1,21 @@
-import { DeleteIcon } from "@/helpers/icons"
+"use client"
+
+import { useEffect, useState } from "react"
 import "./item-list.css"
+import NewItemComponent from "./server-side"
 
 export default function ItemList() {
+    const [newItem, setNewItem] = useState([]);
+
     return (
         <div className="item-list">
             <h3>Öğe Listesi</h3>
 
             <div className="items">
-                <div className="new-item">
-                    <div className="form-item">
-                        <label htmlFor="item-name">Öğe Adı</label>
-                        <input type="text" name="item-name" id="item-name" placeholder="Öğe Adı"/>
-                    </div>
-
-                    <div className="form-item">
-                        <label htmlFor="qty">Adet</label>
-                        <input type="text" name="qty" id="qty" placeholder="Adet"/>
-                    </div>
-
-                    <div className="form-item">
-                        <label htmlFor="price">Fiyat</label>
-                        <input type="text"  name="price" id="price" placeholder="Fiyat"/>
-                    </div>
-
-                    <div className="form-item">
-                        <label htmlFor="total">Toplam</label>
-                        <input type="text"  name="total" id="total" value={400.00} placeholder="Toplam"/>
-                    </div>
-
-                    <button><DeleteIcon/></button>
-                </div>
-
-                <div className="new-item">
-                    <div className="form-item">
-                        <label htmlFor="item-name">Öğe Adı</label>
-                        <input type="text" name="item-name" id="item-name" placeholder="Öğe Adı"/>
-                    </div>
-
-                    <div className="form-item">
-                        <label htmlFor="qty">Adet</label>
-                        <input type="text" name="qty" id="qty" placeholder="Adet"/>
-                    </div>
-
-                    <div className="form-item">
-                        <label htmlFor="price">Fiyat</label>
-                        <input type="text"  name="price" id="price" placeholder="Fiyat"/>
-                    </div>
-
-                    <div className="form-item">
-                        <label htmlFor="total">Toplam</label>
-                        <input type="text"  name="total" id="total" value={400.00} placeholder="Toplam"/>
-                    </div>
-
-                    <button><DeleteIcon/></button>
-                </div>
+                {newItem}
             </div>
 
-            <button className="add-new-button">+ Yeni Öğe Ekle</button>
+            <button className="add-new-button" onClick={{}}>+ Yeni Öğe Ekle</button>
         </div>
     )
-  }
-  
+}
