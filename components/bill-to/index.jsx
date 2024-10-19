@@ -28,47 +28,50 @@ export default function BillTo() {
         />
       </label>
 
-      <div className="cities">
-        <label htmlFor="city">
-          Şehir
-          <input type="text" placeholder="Şehir" name="city" id="city" />
-        </label>
+      <div className="addressContent">
+        <div className="citiesContent">
+          <label htmlFor="city">
+            Şehir
+            <input type="text" placeholder="Şehir" name="city" id="city" />
+          </label>
 
-        <label htmlFor="postCode">
-          Posta Kodu
-          <input
-            type="text"
-            placeholder="Posta Kodu"
-            name="postCode"
-            id="postCode"
-          />
+          <label htmlFor="postCode">
+            Posta Kodu
+            <input
+              type="text"
+              placeholder="Posta Kodu"
+              name="postCode"
+              id="postCode"
+            />
+          </label>
+        </div>
+        <label htmlFor="country">
+          Ülke
+          <input type="text" placeholder="Ülke" name="country" id="country" />
         </label>
       </div>
 
-      <label htmlFor="country">
-        Ülke
-        <input type="text" placeholder="Ülke" name="country" id="country" />
-      </label>
+      <div className="invoicePaymentDate">
+        <label htmlFor="invoiceDate">
+          Fatura Tarihi
+          <input
+            type="date"
+            placeholder="Fatura Tarihi"
+            name="invoiceDate"
+            id="invoiceDate"
+          />
+        </label>
 
-      <label htmlFor="invoiceDate">
-        Fatura Tarihi
-        <input
-          type="date"
-          placeholder="Fatura Tarihi"
-          name="invoiceDate"
-          id="invoiceDate"
-        />
-      </label>
-
-      <label htmlFor="paymentDate">
-        Ödeme Koşulları
-        <select name="paymentDate" id="">
-          <option value="">Önümüzdeki 30 Gün</option>
-          <option value="">Önümüzdeki 14 Gün</option>
-          <option value="">Önümüzdeki 7Gün</option>
-          <option value="">Önümüzdeki 1 Gün</option>
-        </select>
-      </label>
+        <label htmlFor="paymentDate">
+          Ödeme Koşulları
+          <select name="paymentDate" id="">
+            <option value="">Önümüzdeki 30 Gün</option>
+            <option value="">Önümüzdeki 14 Gün</option>
+            <option value="">Önümüzdeki 7Gün</option>
+            <option value="">Önümüzdeki 1 Gün</option>
+          </select>
+        </label>
+      </div>
 
       <label htmlFor="projectDescription">
         Proje Açıklaması
