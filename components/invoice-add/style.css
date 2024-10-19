@@ -36,7 +36,53 @@
       display: flex;
       gap: 8px;
       align-items: center;
+      cursor: pointer;
     }
+  }
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+
+  h6 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    text-align: right;
+    color: #0c0e16;
+    cursor: pointer;
+  }
+}
+
+.btns .filter {
+  display: none;
+  position: absolute;
+  top: 130px;
+  right: 155px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btns:hover .filter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: start;
+  width: fit-content;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 }
 
@@ -53,5 +99,17 @@
     display: flex;
     gap: 8px;
     align-items: center;
+    cursor: pointer;
+  }
+}
+
+@media (width >=1024px) {
+  .invoiceOverview {
+    display: grid;
+    grid-template-columns: 1fr 14fr;
+  }
+
+  .btns .filter {
+    top: 45px;
   }
 }
