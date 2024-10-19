@@ -1,5 +1,6 @@
 body {
   font-family: system-ui;
+  background-color: #f8f8fb;
 }
 
 h3 {
@@ -22,4 +23,11 @@ select {
   letter-spacing: -0.25px;
   text-align: left;
   border: 1px solid #dfe3fa;
+}
+
+@media (width >=768px) {
+  input,
+  select {
+    width: 100%;
+  }
 }

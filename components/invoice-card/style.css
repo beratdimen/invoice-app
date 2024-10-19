@@ -1,0 +1,87 @@
+.cardContainer {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0px 0 10px #48549f1a;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      color: #0c0e16;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 15px;
+      letter-spacing: -0.25px;
+      text-align: left;
+
+      span {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: -0.25px;
+        text-align: left;
+        color: #7e88c3;
+      }
+    }
+
+    p {
+      color: #858bb2;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: -0.10000000149011612px;
+    }
+  }
+
+  .cardContentGeneral {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .cardContent {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      p {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: -0.10000000149011612px;
+        text-align: left;
+
+        color: #888eb0;
+      }
+
+      h3 {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: -0.25px;
+        text-align: left;
+        color: #0c0e16;
+      }
+    }
+
+    .cardsituation {
+      p {
+        background-color: #33d69f60;
+        color: #33d69f;
+        width: 104px;
+        text-align: center;
+        padding-block: 14px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: -0.25px;
+      }
+    }
+  }
+}
