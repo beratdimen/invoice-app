@@ -1,6 +1,6 @@
-import css from "./bill-form.css";
+import "./bill-form.css";
 
-export default function BillForm() {
+export default function BillForm({ error }) {
   return (
     <div className="billFrom">
       <h3>Fatura Gönderen</h3>
@@ -11,6 +11,8 @@ export default function BillForm() {
         name="fromStreet"
         placeholder="Sokak"
       />
+      {error?.fromStreet && <p className="error">{error.fromStreet}</p>}
+
       <div className="city">
         <div>
           <label htmlFor="fromCity">Şehir</label>
@@ -20,6 +22,7 @@ export default function BillForm() {
             name="fromCity"
             placeholder="Şehir"
           />
+          {error?.fromCity && <p className="error">{error.fromCity}</p>}
         </div>
         <div>
           <label htmlFor="fromPostCode">Posta Kodu</label>
@@ -29,8 +32,10 @@ export default function BillForm() {
             name="fromPostCode"
             placeholder="Posta Kodu"
           />
+          {error?.fromPostCode && <p className="error">{error.fromPostCode}</p>}
         </div>
       </div>
+
       <label htmlFor="fromCountry">Ülke</label>
       <input
         type="text"
@@ -38,6 +43,7 @@ export default function BillForm() {
         name="fromCountry"
         placeholder="Ülke"
       />
+      {error?.fromCountry && <p className="error">{error.fromCountry}</p>}
     </div>
   );
 }
