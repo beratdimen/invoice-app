@@ -1,0 +1,63 @@
+h3 {
+  color: #7E88C3;
+}
+strong {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  color: #0C0E16;
+}
+
+p {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: #7E88C3;
+}
+
+.grandTotal {
+  color: white;
+  background-color: #373B53;
+  p {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.10000000149011612px;
+    text-align: left;
+
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    text-align: right;
+
+  }
+}
+
+.billIdnCat {
+  margin-bottom: 30px;
+  display: grid;
+  gap: 4px;
+}
+
+.companyAddress {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 31px;
+}
+
+.customerAddress {
+  margin-bottom: 32px;
+}
+
+.customerEmail {
+  margin-bottom: 38px;
+}
