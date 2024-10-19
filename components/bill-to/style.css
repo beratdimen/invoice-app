@@ -1,16 +1,7 @@
 .billTo {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-
-  h3 {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 15px;
-    letter-spacing: -0.25px;
-    text-align: left;
-    color: #7c5dfa;
-  }
+  gap: 24px;
 
   label {
     display: flex;
@@ -24,8 +15,27 @@
     color: #7e88c3;
   }
 
-  .cities {
+  .invoicePaymentDate {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .citiesContent {
     display: flex;
     gap: 24px;
+  }
+}
+
+@media (width >= 426px) {
+  .billTo {
+    .addressContent {
+      display: flex;
+      gap: 24px;
+    }
+
+    .invoicePaymentDate {
+      flex-direction: row;
+    }
   }
 }
