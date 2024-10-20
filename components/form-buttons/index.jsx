@@ -4,9 +4,9 @@ export default function FormButtons(){
 
   return(
     <div className="draftorSubmit">
-      <button>Sil</button>
-      <button>Taslak Olarak Kaydet</button>
-      <button>Kaydet & Gönder</button>
+      <button className='delete'>Sil</button>
+      <button className='saveAsSummary'>Taslak Olarak Kaydet</button>
+      <button className='save'>Kaydet & Gönder</button>
     </div>
   )
 }
