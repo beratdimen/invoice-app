@@ -204,6 +204,41 @@ button:last-child {
   display: none;
 }
 
+.confirm {
+  border: none;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 327px;
+  padding: 32px;
+  h2 {
+    margin-bottom: 8px;
+  }
+  p{
+    margin-bottom: 22px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.10000000149011612px;
+    text-align: left;
+
+  }
+
+}
+
+.confirm   button:last-child {
+  padding: 16px 24px;
+  background-color: rgba(236, 87, 87, 1);
+}
+
+.confirmButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 @media (width>= 768px){
   .detailsContainer {
     padding-inline: 32px;
@@ -293,6 +328,10 @@ button:last-child {
   .status {
     gap: 20px;
     align-items: center;
+  }
+
+  .confirm {
+    width: 480px;
   }
 
 
