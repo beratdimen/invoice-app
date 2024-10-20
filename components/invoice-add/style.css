@@ -108,47 +108,48 @@
       }
     }
   }
-}
+  dialog {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
 
-dialog {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  border: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: transparent;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
+  dialog::-webkit-scrollbar {
+    width: 8px;
+  }
 
-dialog::-webkit-scrollbar {
-  width: 8px;
-}
+  dialog::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-dialog::-webkit-scrollbar-track {
-  background: transparent;
-}
+  dialog::-webkit-scrollbar-thumb {
+    background-color: rgb(79, 79, 129);
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
 
-dialog::-webkit-scrollbar-thumb {
-  background-color: rgb(79, 79, 129);
-  border-radius: 10px;
-  border: 2px solid transparent;
-}
-
-dialog {
-  scrollbar-color: rgb(79, 79, 129) transparent;
-  scrollbar-width: thin;
+  dialog {
+    scrollbar-color: rgb(79, 79, 129) transparent;
+    scrollbar-width: thin;
+  }
 }
 
 @media (width >=768px) {
-  dialog {
-    width: 75%;
-    position: fixed;
-    top: 80px;
-    left: 0;
+  .addInvoiceContainer {
+    dialog {
+      width: 75%;
+      position: fixed;
+      top: 80px;
+      left: 0;
+    }
   }
 }
 
@@ -158,16 +159,15 @@ dialog {
       display: flex;
       flex-direction: row;
     }
-  }
-
-  dialog {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    border: none;
-    position: fixed;
-    top: 0;
-    left: 80px;
-    background: transparent;
+    dialog {
+      width: 50%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      position: fixed;
+      top: 0;
+      left: 80px;
+      background: transparent;
+    }
   }
 }

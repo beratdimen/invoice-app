@@ -29,7 +29,7 @@ export default function AddInvoice() {
       <Header />
 
       <>
-        <dialog ref={modalRef} open={open}>
+        <dialog className="dialogForm" ref={modalRef} open={open}>
           <div
             className="commentsRightSideBar"
             style={{
