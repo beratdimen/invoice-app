@@ -15,7 +15,7 @@ export default function InvoiceAddPage() {
     <form action={action}>
       <BillForm error={state.error} />
       <BillTo error={state.error} />
-      <ItemList />
+      <ItemList error={state.error} />
       <FormButtons />
     </form>
   );

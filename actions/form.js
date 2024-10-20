@@ -14,6 +14,9 @@ export default async function FormValidation(prevState, formData) {
   const paymentDate = formData.get("paymentDate");
   const projectDescription = formData.get("projectDescription");
   const city = formData.get("city");
+  const itemName = formData.get("itemName");
+  const qty = formData.get("qty");
+  const price = formData.get("price");
 
   const errors = {};
 
@@ -32,6 +35,9 @@ export default async function FormValidation(prevState, formData) {
   if (!projectDescription)
     errors.projectDescription = "Açıklama alanı boş olamaz.";
   if (!city) errors.city = "Ülke alanı boş olamaz.";
+  if (!itemName) errors.itemName = "Ülke alanı boş olamaz.";
+  if (!qty) errors.qty = "Ülke alanı boş olamaz.";
+  if (!price) errors.price = "Ülke alanı boş olamaz.";
 
   if (Object.keys(errors).length > 0) {
     return { error: errors };
