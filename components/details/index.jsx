@@ -1,12 +1,28 @@
-import { GoBack } from '@/helpers/icons'
-import './style.css'
-import Link from 'next/link'
+"use client";
+import { GoBack } from "@/helpers/icons";
+import "./style.css";
+import Link from "next/link";
+import { useRef } from "react";
 export default function Details() {
+  const confirmDeleteModal = useRef();
+
+  const openDialog = () => {
+    if (confirmDeleteModal.current) {
+      confirmDeleteModal.current.showModal();
+    }
+  };
+  const closeDialog = () => {
+    if (confirmDeleteModal.current) {
+      confirmDeleteModal.current.close();
+    }
+  };
 
   return (
     <div className="detailsContainer">
       <div className="return">
-        <Link href={'/'}><GoBack /> Geri Dön</Link>
+        <Link href={"/"}>
+          <GoBack /> Geri Dön
+        </Link>
       </div>
       <div className="desktopButtons">
         <div className="status">
@@ -20,9 +36,11 @@ export default function Details() {
         </div>
       </div>
 
-      <div className='desktopAdress'>
+      <div className="desktopAdress">
         <div className="billIdnCat">
-          <h3>#<strong>XM9141</strong></h3>
+          <h3>
+            #<strong>XM9141</strong>
+          </h3>
           <p>Grafik Dizayn</p>
         </div>
         <div className="companyAddress">
@@ -33,7 +51,7 @@ export default function Details() {
         </div>
       </div>
 
-      <div className='desktopAddressMail'>
+      <div className="desktopAddressMail">
         <div className="billDatenAddress">
           <div className="dates">
             <div>
@@ -55,7 +73,6 @@ export default function Details() {
           </div>
         </div>
 
-
         <div className="customerEmail">
           <p>Gönderilen</p>
           <strong>alexgrim@mail.com</strong>
@@ -69,10 +86,15 @@ export default function Details() {
           <p>Toplam</p>
         </div>
         <div className="cartItemDesktop">
-          <input type="text" name="itemName" readOnly defaultValue={'Banner Design'} />
+          <input
+            type="text"
+            name="itemName"
+            readOnly
+            defaultValue={"Banner Design"}
+          />
           <input type="text" name="quantity" readOnly defaultValue={1} />
-          <input type="text" name="price" readOnly defaultValue={'£ 156.00'} />
-          <input type="text" name="total" readOnly defaultValue={'£ 556.00'} />
+          <input type="text" name="price" readOnly defaultValue={"£ 156.00"} />
+          <input type="text" name="total" readOnly defaultValue={"£ 556.00"} />
         </div>
         <div className="cartItem">
           <div className="item">
@@ -90,9 +112,19 @@ export default function Details() {
 
       <div className="detailsButtons mobile">
         <button>Düzenle</button>
-        <button>Sil</button>
+        <button onClick={() => openDialog()}>Sil</button>
         <button>Ödeme Yapıldı</button>
       </div>
+
+      <dialog ref={confirmDeleteModal}>
+        <h2>Silmeyi Onayla</h2>
+        <p>
+          XM9141 numaralı faturayı silmek istediğinizden emin misiniz? Bu eylem
+          geri alınamaz.
+        </p>
+        <button onClick={() => closeDialog()}>Vazgeç</button>
+        <button>Sil</button>
+      </dialog>
     </div>
-  )
+  );
 }
