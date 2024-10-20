@@ -26,14 +26,15 @@
   .invoiceOverview {
     display: flex;
     flex-direction: column;
-    gap: 16px;
 
     .actions {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 16px 0px;
-      margin-inline: 24px;
+      padding-inline: 24px;
+      max-width: 730px;
+      margin: 60px auto;
 
       h2 {
         display: flex;
@@ -68,6 +69,10 @@
         color: #ffffff;
         padding: 6px;
       }
+    }
+
+    .cardSection {
+      padding: 0px 24px;
     }
   }
 
