@@ -112,4 +112,8 @@
   .btns .filter {
     top: 45px;
   }
+
+  .commentsRightSideBar {
+    width: 50%;
+  }
 }
