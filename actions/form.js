@@ -21,15 +21,16 @@ export default async function FormValidation(prevState, formData) {
   if (!fromCity) errors.fromCity = "Şehir alanı boş olamaz.";
   if (!fromPostCode) errors.fromPostCode = "Posta kodu alanı boş olamaz.";
   if (!fromCountry) errors.fromCountry = "Ülke alanı boş olamaz.";
-  if (!userName) errors.userName = "Ülke alanı boş olamaz.";
-  if (!userEmail) errors.userEmail = "Ülke alanı boş olamaz.";
-  if (!userAddress) errors.userAddress = "Ülke alanı boş olamaz.";
-  if (!addressContent) errors.addressContent = "Ülke alanı boş olamaz.";
-  if (!postCode) errors.postCode = "Ülke alanı boş olamaz.";
+  if (!userName) errors.userName = "İsim alanı boş olamaz.";
+  if (!userEmail) errors.userEmail = "E-Posta alanı boş olamaz.";
+  if (!userAddress) errors.userAddress = "Adres alanı boş olamaz.";
+  if (!addressContent) errors.addressContent = "Şehir alanı boş olamaz.";
+  if (!postCode) errors.postCode = "Posta Kodu alanı boş olamaz.";
   if (!country) errors.country = "Ülke alanı boş olamaz.";
-  if (!invoiceDate) errors.invoiceDate = "Ülke alanı boş olamaz.";
-  if (!paymentDate) errors.paymentDate = "Ülke alanı boş olamaz.";
-  if (!projectDescription) errors.projectDescription = "Ülke alanı boş olamaz.";
+  if (!invoiceDate) errors.invoiceDate = "Tarih alanı boş olamaz.";
+  if (!paymentDate) errors.paymentDate = "Ödeme Tarihi alanı boş olamaz.";
+  if (!projectDescription)
+    errors.projectDescription = "Açıklama alanı boş olamaz.";
   if (!city) errors.city = "Ülke alanı boş olamaz.";
 
   if (Object.keys(errors).length > 0) {
