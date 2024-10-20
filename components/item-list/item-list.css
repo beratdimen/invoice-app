@@ -1,7 +1,4 @@
-/* MOBILE */
 .item-list {
-  color: #777f98;
-
   h3 {
     font-size: 18px;
     font-weight: 700;
@@ -81,12 +78,11 @@
     line-height: 15px;
     letter-spacing: -0.25px;
     text-align: center;
-    width: 327px;
     height: 48px;
     border-radius: 24px;
     border: none;
     color: #7e88c3;
-    background-color: #f9fafe;
+    background-color: #F9FAFE;
     transition: background-color 0.5s ease;
   }
 
@@ -95,7 +91,6 @@
   }
 }
 
-/* RESPONSIVE */
 @media (width >= 768px) {
   .item-list {
     width: 616px;
@@ -160,18 +155,4 @@
       width: 504px;
     }
   }
-}
-
-/* SILINECEK */
-* {
-  font-family: system-ui;
-}
-
-label {
-  color: #7e88c3;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 15px;
-  letter-spacing: -0.10000000149011612px;
-  text-align: left;
 }

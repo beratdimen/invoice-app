@@ -1,28 +1,37 @@
-button {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 15px;
-  letter-spacing: -0.25px;
-  text-align: left;
-  color: rgba(126, 136, 195, 1);
-  border: none;
-  padding: 16px;
-  border-radius: 99em;
-  background: none;
-}
-
-button:nth-child(2) {
-  color: rgba(136, 142, 176, 1);
-  background-color: rgba(55, 59, 83, 1);
-}
-
-button:last-child {
-  color: white;
-  background-color: rgba(124, 93, 250, 1);
-
-}
-
 .draftorSubmit {
   display: flex;
   gap: 7px;
+  background-color: #FFFFFF;
+  padding: 21px 24px;
+  justify-content: center;
+
+  .delete {
+    height: 48px;
+    border-radius: 24px;
+    border: none;
+    justify-content: center;
+    background-color: #F9FAFE;
+    color: #7E88C3;
+    padding: 0px 20px;
+  }
+
+  .saveAsSummary {
+    height: 48px;
+    border-radius: 24px;
+    border: none;
+    justify-content: center;
+    background-color: #373B53;
+    color: #888EB0;
+    padding: 0px 10px;
+  }
+
+  .save {
+    height: 48px;
+    border-radius: 24px;
+    border: none;
+    justify-content: center;
+    background-color: #7C5DFA;
+    color: #FFFFFF;
+    padding: 0px 10px;
+  }
 }
