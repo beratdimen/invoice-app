@@ -5,7 +5,6 @@ export default function Home() {
   return (
     <>
       <InvoicePAge />
-      <Details />
     </>
   );
 }
