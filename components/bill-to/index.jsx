@@ -74,10 +74,10 @@ export default function BillTo({ error }) {
         <label htmlFor="paymentDate">
           Ödeme Koşulları
           <select name="paymentDate" id="paymentDate">
-            <option value="">Önümüzdeki 30 Gün</option>
-            <option value="">Önümüzdeki 14 Gün</option>
-            <option value="">Önümüzdeki 7 Gün</option>
-            <option value="">Önümüzdeki 1 Gün</option>
+            <option value={30}>Önümüzdeki 30 Gün</option>
+            <option value={14}>Önümüzdeki 14 Gün</option>
+            <option value={7}>Önümüzdeki 7 Gün</option>
+            <option value={1}>Önümüzdeki 1 Gün</option>
           </select>
           {error?.paymentDate && <p className="error">{error.paymentDate}</p>}
         </label>
