@@ -154,6 +154,10 @@ button {
   cursor: pointer;
 }
 
+.cartItemDesktop input {
+  background: none;
+}
+
 
 
 button:last-child {
