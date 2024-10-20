@@ -116,14 +116,16 @@ export default function Details() {
         <button>Ödeme Yapıldı</button>
       </div>
 
-      <dialog ref={confirmDeleteModal}>
+      <dialog className="confirm" ref={confirmDeleteModal}>
         <h2>Silmeyi Onayla</h2>
         <p>
           XM9141 numaralı faturayı silmek istediğinizden emin misiniz? Bu eylem
           geri alınamaz.
         </p>
-        <button onClick={() => closeDialog()}>Vazgeç</button>
-        <button>Sil</button>
+        <div className="confirmButtons">
+          <button onClick={() => closeDialog()}>Vazgeç</button>
+          <button>Sil</button>
+        </div>
       </dialog>
     </div>
   );
