@@ -8,7 +8,7 @@ import Header from "../header/page";
 import { AddIcon, DownIcon, GoBack } from "@/helpers/icons";
 
 export default function AddInvoice() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const modalRef = useRef();
 
   const openDialog = () => {

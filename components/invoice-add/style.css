@@ -4,7 +4,6 @@
     background: white;
     transition: width 1s ease;
     padding: 24px;
-    overflow: scroll;
 
     .backButton {
       display: flex;
@@ -111,7 +110,6 @@
 
 dialog {
   width: 100%;
-  height: 100vh;
   margin: 0;
   padding: 0;
   border: none;
@@ -119,7 +117,7 @@ dialog {
   top: 0;
   left: 0;
   background: transparent;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 @media (width >=768px) {
