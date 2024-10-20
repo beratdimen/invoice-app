@@ -44,7 +44,7 @@ export function GoBack() {
       <path
         d="M4.3418 0.885742L0.113895 5.11364L4.3418 9.34155"
         stroke="#7C5DFA"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </svg>
   );
@@ -59,7 +59,7 @@ export function DownIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M1 1L5.2279 5.2279L9.4558 1" stroke="#7C5DFA" stroke-width="2" />
+      <path d="M1 1L5.2279 5.2279L9.4558 1" stroke="#7C5DFA" strokeWidth="2" />
     </svg>
   );
 }
