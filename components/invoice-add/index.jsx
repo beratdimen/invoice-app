@@ -38,7 +38,7 @@ export default function AddInvoice() {
             }}
           >
             <button className="backButton" onClick={() => closeDialog()}>
-              <GoBack /> Go Back
+              <GoBack /> Geri Dön
             </button>
             <InvoiceAddPage />
           </div>
@@ -65,9 +65,9 @@ export default function AddInvoice() {
             <img src="../img/emptyImage.png" alt="emptyImage" />
 
             <div className="emptyTexts">
-              <h2>There is nothing here</h2>
+              <h2>Burada hiçbir şey yok</h2>
               <p>
-                Create an invoice by clicking the New button and get started
+                Yeni düğmesini tıklayarak bir fatura oluşturun ve başlayın
               </p>
             </div>
           </div>

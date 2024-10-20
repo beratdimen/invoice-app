@@ -1,5 +1,4 @@
-.addInvoiceContainer {
-  display: flex;
+.addInvoiceContainer {  
   .commentsRightSideBar {
     width: 0;
     background: white;
@@ -155,6 +154,8 @@
 
 @media (width >= 1440px) {
   .addInvoiceContainer {
+    display: flex;
+
     .invoiceOverview {
       display: flex;
       flex-direction: row;
