@@ -40,7 +40,7 @@ export default function AddInvoice() {
                 </button>
               </div>
 
-              {/* <InvoiceCard /> */}
+              <InvoiceCard />
 
               <div className="emptyContainer">
                 <img src="../img/emptyImage.png" alt="emptyImage" />
