@@ -5,6 +5,7 @@ export default function BillForm({ error }) {
     <div className="billFrom">
       <h3>Fatura Gönderen</h3>
       <label htmlFor="fromStreet">Sokak</label>
+
       <input
         type="text"
         id="fromStreet"

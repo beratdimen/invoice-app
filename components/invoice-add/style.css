@@ -66,6 +66,7 @@
         background-color: #7c5dfa;
         color: #ffffff;
         padding: 6px;
+        cursor: pointer;
       }
     }
 
@@ -120,6 +121,7 @@
     background: transparent;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   dialog::-webkit-scrollbar {
@@ -153,7 +155,7 @@
   }
 }
 
-@media (width >= 1440px) {
+@media (width >= 1024px) {
   .addInvoiceContainer {
     .invoiceOverview {
       display: flex;
