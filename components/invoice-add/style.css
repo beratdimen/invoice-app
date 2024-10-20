@@ -112,6 +112,7 @@
 
 dialog {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   border: none;
@@ -141,7 +142,6 @@ dialog {
 
   dialog {
     width: 50%;
-    height: 100vh;
     margin: 0;
     padding: 0;
     border: none;
