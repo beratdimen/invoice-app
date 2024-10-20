@@ -11,15 +11,11 @@ export default function ItemList() {
     <div className="item-list">
       <h3>Öğe Listesi</h3>
 
-            <div className="items">
-                {newItem.map(x =>
-                    <div className="new-it">
-                        {x}
-                    </div>
-                )}
-            </div>
+      <div className="items">{newItem}</div>
 
-            <button type="button" className="add-new-button" onClick={() => setNewItem([...newItem, NewItemComponent()])}>+ Yeni Öğe Ekle</button>
-        </div>
-    )
+      <button className="add-new-button" onClick={{}}>
+        + Yeni Öğe Ekle
+      </button>
+    </div>
+  );
 }
