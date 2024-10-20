@@ -31,7 +31,7 @@ export default function Details() {
         </div>
         <div className="detailsButtons desktop">
           <button>Düzenle</button>
-          <button>Sil</button>
+          <button onClick={() => openDialog()}>Sil</button>
           <button>Ödeme Yapıldı</button>
         </div>
       </div>
