@@ -12,10 +12,14 @@ export default function ItemList() {
             <h3>Öğe Listesi</h3>
 
             <div className="items">
-                {newItem}
+                {newItem.map(x =>
+                    <div className="new-it">
+                        {x}
+                    </div>
+                )}
             </div>
 
-            <button className="add-new-button" onClick={{}}>+ Yeni Öğe Ekle</button>
+            <button type="button" className="add-new-button" onClick={() => setNewItem([...newItem, NewItemComponent()])}>+ Yeni Öğe Ekle</button>
         </div>
     )
 }
