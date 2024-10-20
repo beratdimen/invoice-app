@@ -10,6 +10,7 @@ export default function BillForm({ error }) {
         id="fromStreet"
         name="fromStreet"
         placeholder="Sokak"
+        defaultValue={"mehmet sokak"}
       />
       {error?.fromStreet && <p className="error">{error.fromStreet}</p>}
 
