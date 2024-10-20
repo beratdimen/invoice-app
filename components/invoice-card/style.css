@@ -74,8 +74,6 @@
 
     .cardsituation {
       p {
-        background-color: #33d69f60;
-        color: #33d69f;
         width: 104px;
         text-align: center;
         padding-block: 14px;
@@ -84,6 +82,15 @@
         font-weight: 700;
         line-height: 15px;
         letter-spacing: -0.25px;
+      }
+      .paid {
+        background-color: #33d69f60;
+        color: #33d69f;
+      }
+
+      .pending {
+        background-color: #ff8f0060;
+        color: #ff8f00;
       }
     }
   }
