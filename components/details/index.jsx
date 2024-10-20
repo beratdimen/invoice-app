@@ -3,6 +3,7 @@ import { GoBack } from "@/helpers/icons";
 import "./style.css";
 import Link from "next/link";
 import { useRef } from "react";
+import Customer from "./serverSide";
 export default function Details() {
   const confirmDeleteModal = useRef();
 
@@ -52,26 +53,7 @@ export default function Details() {
       </div>
 
       <div className="desktopAddressMail">
-        <div className="billDatenAddress">
-          <div className="dates">
-            <div>
-              <p>Fatura Tarihi</p>
-              <strong>21 Ağts 2021</strong>
-            </div>
-            <div>
-              <p>Son Ödeme Tarihi</p>
-              <strong>20 Eylül 2021</strong>
-            </div>
-          </div>
-          <div className="customerAddress">
-            <p>Fatura Sahibi</p>
-            <strong>Alex Grim</strong>
-            <p>84 Church Way</p>
-            <p>Bradford</p>
-            <p>BD1 9PB</p>
-            <p>United Kingdom</p>
-          </div>
-        </div>
+        <Customer />
 
         <div className="customerEmail">
           <p>Gönderilen</p>

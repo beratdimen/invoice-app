@@ -5,7 +5,7 @@ export default function DetailsPage(){
 
   return (
     <>
-      <div style={{display: "flex"}} className="detailsPage">
+      <div className="detailsPage">
         <Header />
         <Details />
       </div>

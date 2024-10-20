@@ -27,6 +27,7 @@ p {
   justify-content: space-between;
   padding: 24px;
   border-radius: 0 0 8px 8px;
+
   p {
     color: white;
     font-size: 13px;
@@ -75,6 +76,7 @@ p {
 
 .customerEmail {
   margin-bottom: 38px;
+
   p {
     margin-bottom: 13px;
   }
@@ -93,6 +95,7 @@ p {
   gap: 83px;
   align-items: center;
   padding: 24px;
+  
   p {
     font-size: 15px;
     font-weight: 700;
@@ -358,5 +361,9 @@ button:last-child {
 
   .cart {
     margin-bottom: 0;
+  }
+
+  .detailsPage {
+    display: flex;
   }
 }
