@@ -351,4 +351,8 @@ button:last-child {
   .detailsButtons button:last-child:hover {
     background-color: rgba(146, 119, 255, 1);
   }
+
+  .cart {
+    margin-bottom: 0;
+  }
 }
