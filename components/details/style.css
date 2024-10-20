@@ -1,5 +1,5 @@
 h3 {
-  color: #7E88C3;
+  color: #7e88c3;
 }
 strong {
   font-size: 15px;
@@ -7,7 +7,7 @@ strong {
   line-height: 20px;
   letter-spacing: -0.25px;
   text-align: left;
-  color: #0C0E16;
+  color: #0c0e16;
 }
 
 p {
@@ -16,12 +16,12 @@ p {
   line-height: 18px;
   letter-spacing: -0.10000000149011612px;
   text-align: left;
-  color: #7E88C3;
+  color: #7e88c3;
 }
 
 .grandTotal {
   color: white;
-  background-color: #373B53;
+  background-color: #373b53;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +35,6 @@ p {
     line-height: 18px;
     letter-spacing: -0.10000000149011612px;
     text-align: left;
-
   }
 
   h2 {
@@ -44,7 +43,6 @@ p {
     line-height: 32px;
     letter-spacing: -0.5px;
     text-align: right;
-
   }
 }
 
@@ -67,7 +65,6 @@ p {
   strong {
     margin-bottom: 7px;
   }
-  
 }
 
 .customerAddress p:first-child {
@@ -95,14 +92,13 @@ p {
   gap: 83px;
   align-items: center;
   padding: 24px;
-  
+
   p {
     font-size: 15px;
     font-weight: 700;
     line-height: 15px;
     letter-spacing: -0.25px;
     text-align: left;
-
   }
 }
 
@@ -115,11 +111,10 @@ p {
   margin-bottom: 80px;
 }
 
-
 .billDatenAddress {
   display: flex;
   gap: 61px;
-  align-items:flex-start;
+  align-items: flex-start;
 }
 
 .dates {
@@ -152,7 +147,7 @@ button {
   border: none;
   padding: 16px;
   border-radius: 99em;
-  background-color: #F9FAFE;
+  background-color: #f9fafe;
   height: 48px;
   cursor: pointer;
 }
@@ -161,20 +156,16 @@ button {
   background: none;
 }
 
-
-
 button:last-child {
   color: white;
   background-color: rgba(124, 93, 250, 1);
-
 }
 
-.detailsButtons button:nth-child(2){
+.detailsButtons button:nth-child(2) {
   color: white;
-  background-color: #EC5757;
+  background-color: #ec5757;
   padding: 16px 25px;
 }
-
 
 .status {
   display: flex;
@@ -187,7 +178,7 @@ button:last-child {
     line-height: 15px;
     letter-spacing: -0.25px;
     text-align: left;
-    color: #FF8F00;
+    color: #ff8f00;
   }
 }
 
@@ -195,7 +186,7 @@ button:last-child {
   padding-top: 33px;
   a {
     display: flex;
-    align-items:end;
+    align-items: end;
     gap: 24px;
     text-decoration: none;
     font-size: 15px;
@@ -204,7 +195,6 @@ button:last-child {
     letter-spacing: -0.25px;
     text-align: left;
     color: black;
-
   }
 }
 
@@ -221,22 +211,26 @@ button:last-child {
   transform: translate(-50%, -50%);
   width: 327px;
   padding: 32px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   h2 {
     margin-bottom: 8px;
   }
-  p{
+  p {
     margin-bottom: 22px;
     font-size: 13px;
     font-weight: 500;
     line-height: 22px;
     letter-spacing: -0.10000000149011612px;
     text-align: left;
-
   }
-
 }
 
-.confirm   button:last-child {
+.confirm.open {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.confirm button:last-child {
   padding: 16px 24px;
   background-color: rgba(236, 87, 87, 1);
 }
@@ -247,7 +241,7 @@ button:last-child {
   gap: 8px;
 }
 
-@media (width>= 768px){
+@media (width>= 768px) {
   .detailsContainer {
     padding-inline: 32px;
   }
@@ -255,7 +249,7 @@ button:last-child {
     display: flex;
     justify-content: space-between;
   }
-  .companyAddress p{
+  .companyAddress p {
     text-align: right;
   }
 
@@ -263,7 +257,7 @@ button:last-child {
     display: flex;
     gap: 117px;
   }
-  .billDatenAddress{
+  .billDatenAddress {
     gap: 117px;
   }
 
@@ -276,27 +270,25 @@ button:last-child {
     padding: 32px 32px 0 32px;
   }
 
-  .cartItemDesktop{
+  .cartItemDesktop {
     display: flex;
     padding-inline: 32px;
-
   }
   .cart {
     display: grid;
     gap: 32px;
     text-align: right;
   }
- 
- 
+
   .cartSections p:first-child {
     margin-right: 217px;
   }
 
-  .cartSections p:nth-child(2){
+  .cartSections p:nth-child(2) {
     margin-right: 92px;
   }
 
-  .cartSections p:nth-child(3){
+  .cartSections p:nth-child(3) {
     margin-right: 111px;
   }
 
@@ -316,7 +308,7 @@ button:last-child {
   .cartItemDesktop input:nth-child(3) {
     margin-right: 60px;
   }
-  
+
   .mobile {
     display: none;
   }
@@ -341,8 +333,6 @@ button:last-child {
   .confirm {
     width: 480px;
   }
-
-
 }
 
 @media (width >= 1440px) {
