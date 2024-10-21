@@ -92,6 +92,11 @@
         background-color: #ff8f0060;
         color: #ff8f00;
       }
+
+      .draft {
+        background-color: #373b5320;
+        color: #373b53;
+      }
     }
   }
 }

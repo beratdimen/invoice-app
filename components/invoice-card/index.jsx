@@ -2,16 +2,16 @@ import Link from "next/link";
 import "./style.css";
 
 export default async function InvoiceCard() {
-  const response = await fetch(
-    "https://invoiceapp.bariscakdi.com.tr/api/Invoice/GetInvoices"
-  );
-  const invoiceData = await response.json();
-  console.log(invoiceData);
+  // const response = await fetch(
+  //   "https://invoiceapp.bariscakdi.com.tr/api/Invoice/GetInvoices"
+  // );
+  // const invoiceData = await response.json();
+  // console.log(invoiceData, "corse");
 
   return (
     <>
-      {invoiceData.map((x) => (
-        <Link href={`/${x.id}`} className="cardContainer">
+      {/* {invoiceData.map((x) => (
+        <Link key={x.id} href={`/${x.id}`} className="cardContainer">
           <div className="cardHeader">
             <h2>
               <span>#</span>RT3080
@@ -43,7 +43,7 @@ export default async function InvoiceCard() {
             </div>
           </div>
         </Link>
-      ))}
+      ))} */}
     </>
   );
 }

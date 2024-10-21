@@ -1,4 +1,4 @@
-import AddInvoice from "@/components/invoice-add";
+import AddInvoice from "../fetch/users";
 
 export default function InvoicePAge() {
   return (
