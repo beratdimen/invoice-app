@@ -1,4 +1,4 @@
-import DeleteButton from "../item-list-delete-button/page";
+import DeleteButton from "./item-list-delete-button/page";
 
 export default function NewItemComponent({ error }) {
   console.log(error);

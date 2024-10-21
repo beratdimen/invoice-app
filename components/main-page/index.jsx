@@ -1,16 +1,13 @@
 "use client";
 
 import { useRef, useState } from "react";
-import InvoiceAddPage from "@/components/fatura-ekleme";
+import InvoiceAddPage from "@/components/invoice-form/new-invoices";
 import "./style.css";
-import Header from "../header/page";
 import { AddIcon, DownIcon, GoBack } from "@/helpers/icons";
 
 export default function AddInvoices({ data }) {
   const [open, setOpen] = useState(false);
   const modalRef = useRef();
-
-  console.log(data);
 
   const openDialog = () => {
     setOpen(true);
@@ -19,6 +16,7 @@ export default function AddInvoices({ data }) {
     }
     console.log("girin bana");
   };
+
   const closeDialog = () => {
     setOpen(false);
     if (modalRef.current) {
