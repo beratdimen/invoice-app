@@ -24,52 +24,6 @@
     flex-direction: column;
     margin: 0 auto;
 
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 16px 0px;
-      padding-inline: 24px;
-      max-width: 730px;
-      margin: 60px auto;
-
-      h2 {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 22.08px;
-        letter-spacing: -0.75px;
-        text-align: left;
-        color: #0c0e16;
-
-        span {
-          font-size: 13px;
-          font-weight: 500;
-          line-height: 15px;
-          letter-spacing: -0.10000000149011612px;
-          text-align: left;
-          color: #888eb0;
-        }
-      }
-
-      button {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        width: 90px;
-        height: 44px;
-        border-radius: 24px;
-        border: none;
-        background-color: #7c5dfa;
-        color: #ffffff;
-        padding: 6px;
-        cursor: pointer;
-        z-index: 999999;
-      }
-    }
-
     .cardSection {
       padding: 0px 24px;
     }
@@ -145,6 +99,73 @@
   }
 }
 
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0px;
+  padding-inline: 24px;
+  max-width: 730px;
+  margin: 60px auto;
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 22.08px;
+    letter-spacing: -0.75px;
+    text-align: left;
+    color: #0c0e16;
+
+    span {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: -0.10000000149011612px;
+      text-align: left;
+      color: #888eb0;
+    }
+  }
+
+  button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 90px;
+    height: 44px;
+    border-radius: 24px;
+    border: none;
+    background-color: #7c5dfa;
+    color: #ffffff;
+    padding: 6px;
+    cursor: pointer;
+    z-index: 999999;
+  }
+
+  .generalFiltre {
+    p {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filtre {
+      display: none;
+
+      p {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+      }
+    }
+    &:hover .filtre {
+      display: block;
+      position: absolute;
+    }
+  }
+}
+
 @media (width >=768px) {
   .addInvoiceContainer {
     dialog {
@@ -153,6 +174,9 @@
       top: 80px;
       left: 0;
     }
+  }
+  .general {
+    display: flex;
   }
 }
 
