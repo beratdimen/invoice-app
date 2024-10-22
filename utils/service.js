@@ -1,9 +1,9 @@
 // postService.js
+"use server";
 import { advancedFetch } from "./fetchGet";
 
 export const getInvoices = async () => {
   const response = await advancedFetch("Invoices");
-  console.log(response, "deneme fetch");
   return response;
 };
 
@@ -17,7 +17,6 @@ export const addInvoices = async () => {
 
 export const getInvoicesDetail = async (id) => {
   const response = await advancedFetch(`InvoiceDetail/${id}`, "POST");
-  console.log(response, "deneme fetch");
   return response;
 };
 
@@ -26,16 +25,24 @@ export const deleteInvoicesDetail = async (id) => {
     `api/Invoice/DeleteInvoice/${id}`,
     "DELETE"
   );
-  console.log(response, "deneme fetch");
   return response;
 };
 
 export const postInvoinces = async (formData) => {
+  console.log("formData :>> ", formData);
   const response = await advancedFetch(
     `api/Invoice/SaveInvoice`,
     "POST",
     formData
   );
-  console.log(response, "deneme fetch");
+  console.log("response :>> ", response);
+  console.log("eklenmis olabilirim :>> ");
+  return response;
+};
+
+export const postClients = async (formData) => {
+  debugger;
+  const response = await advancedFetch(`SaveClient`, "POST", formData);
+  console.log(response, "deneme client fetch");
   return response;
 };

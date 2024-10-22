@@ -1,62 +1,81 @@
 "use server";
 
-import { postInvoinces } from "@/utils/service";
+import { getInvoices, postClients, postInvoinces } from "@/utils/service";
 
 export default async function FormValidation(prevState, formData) {
   const formObj = Object.fromEntries(formData);
   console.log(formObj);
 
-  const response = await postInvoinces(formData);
+  const errors = {
+    fromStreet: !formObj.fromStreet && "Sokak alanı boş olamaz.",
+    fromCity: !formObj.fromCity && "Şehir alanı boş olamaz.",
+    fromPostCode: !formObj.fromPostCode && "Posta kodu alanı boş olamaz.",
+    fromCountry: !formObj.fromCountry && "Ülke alanı boş olamaz.",
+    userName: !formObj.userName && "İsim alanı boş olamaz.",
+    userEmail: !formObj.userEmail && "E-Posta alanı boş olamaz.",
+    userAddress: !formObj.userAddress && "Adres alanı boş olamaz.",
+    postCode: !formObj.postCode && "Posta Kodu alanı boş olamaz.",
+    country: !formObj.country && "Ülke alanı boş olamaz.",
+    invoiceDate: !formObj.invoiceDate && "Tarih alanı boş olamaz.",
+    paymentDate: !formObj.paymentDate && "Ödeme Tarihi alanı boş olamaz.",
+    projectDescription:
+      !formObj.projectDescription && "Açıklama alanı boş olamaz.",
+    city: !formObj.city && "Şehir alanı boş olamaz.",
+    itemName: !formObj.itemName && "Ürün adı alanı boş olamaz.",
+    qty: !formObj.qty && "Miktar alanı boş olamaz.",
+    price: !formObj.price && "Fiyat alanı boş olamaz.",
+  };
 
-  if (!response) {
-    const errorMessage = await response.text();
-    throw new Error(`Error: ${response.status} - ${errorMessage}`);
+  const filteredErrors = Object.fromEntries(
+    Object.entries(errors).filter(([_, v]) => v)
+  );
+
+  console.log("errors :>> ", filteredErrors);
+  debugger;
+
+  if (Object.keys(filteredErrors).length > 0) {
+    return { error: filteredErrors };
   }
 
-  const responseData = await response.json();
+  const clientData = {
+    name: formObj.userName,
+    email: formObj.userEmail,
+    address: formObj.userAddress,
+    city: formObj.city,
+    postCode: formObj.postCode,
+    country: formObj.country,
+  };
 
-  const fromStreet = formData.get("fromStreet");
-  const fromCity = formData.get("fromCity");
-  const fromPostCode = formData.get("fromPostCode");
-  const fromCountry = formData.get("fromCountry");
-  const userName = formData.get("userName");
-  const userEmail = formData.get("userEmail");
-  const userAddress = formData.get("userAddress");
-  const addressContent = formData.get("addressContent");
-  const postCode = formData.get("postCode");
-  const country = formData.get("country");
-  const invoiceDate = formData.get("invoiceDate");
-  const paymentDate = formData.get("paymentDate");
-  const projectDescription = formData.get("projectDescription");
-  const city = formData.get("city");
-  const itemName = formData.get("itemName");
-  const qty = formData.get("qty");
-  const price = formData.get("price");
+  console.log("clientData :>> ", clientData);
 
-  const errors = {};
+  // const responseClient = await postClients(clientData);
+  // console.log("responseClient :>> ", responseClient);
 
-  if (!fromStreet) errors.fromStreet = "Sokak alanı boş olamaz.";
-  if (!fromCity) errors.fromCity = "Şehir alanı boş olamaz.";
-  if (!fromPostCode) errors.fromPostCode = "Posta kodu alanı boş olamaz.";
-  if (!fromCountry) errors.fromCountry = "Ülke alanı boş olamaz.";
-  if (!userName) errors.userName = "İsim alanı boş olamaz.";
-  if (!userEmail) errors.userEmail = "E-Posta alanı boş olamaz.";
-  if (!userAddress) errors.userAddress = "Adres alanı boş olamaz.";
-  if (!addressContent) errors.addressContent = "Şehir alanı boş olamaz.";
-  if (!postCode) errors.postCode = "Posta Kodu alanı boş olamaz.";
-  if (!country) errors.country = "Ülke alanı boş olamaz.";
-  if (!invoiceDate) errors.invoiceDate = "Tarih alanı boş olamaz.";
-  if (!paymentDate) errors.paymentDate = "Ödeme Tarihi alanı boş olamaz.";
-  if (!projectDescription)
-    errors.projectDescription = "Açıklama alanı boş olamaz.";
-  if (!city) errors.city = "Ülke alanı boş olamaz.";
-  if (!itemName) errors.itemName = "Ülke alanı boş olamaz.";
-  if (!qty) errors.qty = "Ülke alanı boş olamaz.";
-  if (!price) errors.price = "Ülke alanı boş olamaz.";
+  const invoiceData = {
+    invoiceName: formObj.fromStreet,
+    description: formObj.projectDescription,
+    createdTime: formObj.invoiceDate,
+    items: [
+      {
+        name: formObj.itemName,
+        quantity: formObj.qty,
+        price: formObj.price,
+        total: formObj.qty * formObj.price,
+      },
+    ],
+    paymentStatus: 1,
+    clientId: 1,
+    paymentTerm: Number(formObj.paymentDate),
+  };
 
-  if (Object.keys(errors).length > 0) {
-    return { error: errors };
+  console.log("invoiceData :>> ", JSON.stringify(invoiceData));
+  const responseInvoince = await postInvoinces(JSON.stringify(invoiceData));
+  console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
+
+  if (!responseInvoince) {
+    const errorMessage = await responseInvoince.text();
+    throw new Error(`Error: ${responseInvoince.status} - ${errorMessage}`);
   }
 
-  return responseData;
+  return { message: "Başarılı", reset: true };
 }

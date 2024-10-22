@@ -16,8 +16,8 @@ export default function BillTo({ error, data }) {
         />
         {error?.userName && <p className="error">{error.userName}</p>}
         <datalist id="userNames">
-          {data.map((x) => (
-            <option value={x.client.name} />
+          {data.map((x, index) => (
+            <option key={index} value={x.client.name} />
           ))}
         </datalist>
       </div>

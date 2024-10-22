@@ -30,7 +30,7 @@ export default function MainPage({ data }) {
       <div className="main-page">
         <div className="add-invoices-header">
           <h2>
-            Invoices <span>7 invoices</span>
+            Faturalar <span>{data?.length} Fatura</span>
           </h2>
 
           <div className="filter">
@@ -67,7 +67,7 @@ export default function MainPage({ data }) {
           <GoBack /> Geri Dön
         </button>
 
-        <InvoiceAddPage data={data} />
+        <InvoiceAddPage data={data} closeDialog={closeDialog} />
       </dialog>
     </>
   );

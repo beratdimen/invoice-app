@@ -16,10 +16,7 @@ export default async function InvoicesList({ data }) {
       {data?.map((x) => (
         <Link key={x.id} href={`/detail/${x.id}`} className="invoice-card">
           <div className="card-header">
-            <h2>
-              <span>#</span>
-              {x.invoiceName}
-            </h2>
+            <h2>{x.invoiceName}</h2>
 
             <p>{x.client.name}</p>
           </div>
