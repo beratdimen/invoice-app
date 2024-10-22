@@ -2,22 +2,34 @@ import Link from "next/link";
 import "./invoices-list.css";
 
 export default async function InvoicesList({ data }) {
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = date.toLocaleString("tr-TR", { month: "long" });
+    const year = date.getFullYear().toString().padStart(4, "0");
+
+    return `${day} ${month} ${year}`;
+  };
   return (
     <div className="invoices-list">
       {data?.map((x) => (
-        <Link key={x.id} href={`/${x.id}`} className="invoice-card">
+        <Link key={x.id} href={`/detail/${x.id}`} className="invoice-card">
           <div className="card-header">
             <h2>
-              <span>#</span>RT3080
+              <span>#</span>
+              {x.invoiceName}
             </h2>
 
-            <p>{x.invoiceName}</p>
+            <p>{x.client.name}</p>
           </div>
 
           <div className="card-content">
             <div className="date-price">
-              <p>22 Ağustos 2024'e kadar</p>
-              <h3>1.800$</h3>
+              <p>{formatDate(x.paymentDue)}</p>
+              {x.items.map((item) => (
+                <h3 key={item.id}>{item.total} $</h3>
+              ))}
             </div>
 
             <div className="situation">

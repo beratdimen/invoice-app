@@ -1,6 +1,20 @@
 "use server";
 
+import { postInvoinces } from "@/utils/service";
+
 export default async function FormValidation(prevState, formData) {
+  const formObj = Object.fromEntries(formData);
+  console.log(formObj);
+
+  const response = await postInvoinces(formData);
+
+  if (!response) {
+    const errorMessage = await response.text();
+    throw new Error(`Error: ${response.status} - ${errorMessage}`);
+  }
+
+  const responseData = await response.json();
+
   const fromStreet = formData.get("fromStreet");
   const fromCity = formData.get("fromCity");
   const fromPostCode = formData.get("fromPostCode");
@@ -33,7 +47,8 @@ export default async function FormValidation(prevState, formData) {
   if (!country) errors.country = "Ülke alanı boş olamaz.";
   if (!invoiceDate) errors.invoiceDate = "Tarih alanı boş olamaz.";
   if (!paymentDate) errors.paymentDate = "Ödeme Tarihi alanı boş olamaz.";
-  if (!projectDescription) errors.projectDescription = "Açıklama alanı boş olamaz.";
+  if (!projectDescription)
+    errors.projectDescription = "Açıklama alanı boş olamaz.";
   if (!city) errors.city = "Ülke alanı boş olamaz.";
   if (!itemName) errors.itemName = "Ülke alanı boş olamaz.";
   if (!qty) errors.qty = "Ülke alanı boş olamaz.";
@@ -43,5 +58,5 @@ export default async function FormValidation(prevState, formData) {
     return { error: errors };
   }
 
-  return { message: "Başarılı!" };
+  return responseData;
 }

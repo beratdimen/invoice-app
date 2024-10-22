@@ -1,25 +1,46 @@
 import "./bill-to.css";
 
-export default function BillTo({ error }) {
+export default function BillTo({ error, data }) {
   return (
     <div className="bill-to-form">
       <h3>Fatura Sahibi</h3>
 
       <div className="bill-to-form-item">
         <label htmlFor="userName">Müşteri Adı</label>
-        <input type="text" name="userName" placeholder="Ad" id="userName" />
+        <input
+          type="text"
+          name="userName"
+          placeholder="Ad"
+          id="userName"
+          list="userNames"
+        />
         {error?.userName && <p className="error">{error.userName}</p>}
+        <datalist id="userNames">
+          {data.map((x) => (
+            <option value={x.client.name} />
+          ))}
+        </datalist>
       </div>
 
       <div className="bill-to-form-item">
         <label htmlFor="userEmail">Müşteri E-Posta</label>
-        <input type="text" placeholder="E-Posta" name="userEmail" id="userEmail" />
+        <input
+          type="text"
+          placeholder="E-Posta"
+          name="userEmail"
+          id="userEmail"
+        />
         {error?.userEmail && <p className="error">{error.userEmail}</p>}
       </div>
 
       <div className="bill-to-form-item">
         <label htmlFor="userAddress">Müşteri Adresi</label>
-        <input type="text" placeholder="Adres" name="userAddress" id="userAddress" />
+        <input
+          type="text"
+          placeholder="Adres"
+          name="userAddress"
+          id="userAddress"
+        />
         {error?.userAddress && <p className="error">{error.userAddress}</p>}
       </div>
 
@@ -32,11 +53,16 @@ export default function BillTo({ error }) {
 
         <div className="bill-to-form-item">
           <label htmlFor="postCode">Posta Kodu</label>
-          <input type="text" placeholder="Posta Kodu" name="postCode" id="postCode" />
+          <input
+            type="text"
+            placeholder="Posta Kodu"
+            name="postCode"
+            id="postCode"
+          />
           {error?.postCode && <p className="error">{error.postCode}</p>}
         </div>
       </div>
-      
+
       <div className="bill-to-form-item">
         <label htmlFor="country">Ülke</label>
         <input type="text" placeholder="Ülke" name="country" id="country" />
@@ -45,8 +71,13 @@ export default function BillTo({ error }) {
 
       <div className="bill-to-form-item">
         <label htmlFor="invoiceDate">Fatura Tarihi</label>
-        <input type="date" placeholder="Fatura Tarihi" name="invoiceDate" id="invoiceDate" />
-        {error?.invoiceDate && <p className="error">{error.invoiceDate}</p>} 
+        <input
+          type="date"
+          placeholder="Fatura Tarihi"
+          name="invoiceDate"
+          id="invoiceDate"
+        />
+        {error?.invoiceDate && <p className="error">{error.invoiceDate}</p>}
       </div>
 
       <div className="bill-to-form-item">
@@ -62,8 +93,15 @@ export default function BillTo({ error }) {
 
       <div className="bill-to-form-item">
         <label htmlFor="projectDescription">Proje Açıklaması</label>
-        <input type="text" placeholder="Proje Açıklaması" name="projectDescription" id="projectDescription" /> 
-        {error?.projectDescription && (<p className="error">{error.projectDescription}</p>)}
+        <input
+          type="text"
+          placeholder="Proje Açıklaması"
+          name="projectDescription"
+          id="projectDescription"
+        />
+        {error?.projectDescription && (
+          <p className="error">{error.projectDescription}</p>
+        )}
       </div>
     </div>
   );

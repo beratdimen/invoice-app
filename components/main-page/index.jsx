@@ -67,7 +67,7 @@ export default function MainPage({ data }) {
           <GoBack /> Geri Dön
         </button>
 
-        <InvoiceAddPage />
+        <InvoiceAddPage data={data} />
       </dialog>
     </>
   );

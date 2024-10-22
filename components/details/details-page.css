@@ -46,6 +46,41 @@ p {
   }
 }
 
+.situation {
+  .pending {
+    color: #ff8f00;
+    background-color: #fff9f0;
+    padding: 14px 19px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+  }
+
+  .paid {
+    color: #33d69f;
+    background-color: #f3fdfa;
+    padding: 14px 19px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+  }
+
+  .draft {
+    color: #373b53;
+    background-color: #f4f4f5;
+    padding: 14px 19px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+  }
+}
+
 .billIdnCat {
   margin-bottom: 30px;
   display: grid;
@@ -209,7 +244,8 @@ button:last-child {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 327px;
+  width: fit-content;
+  height: fit-content;
   padding: 32px;
   h2 {
     margin-bottom: 8px;
@@ -330,8 +366,9 @@ button:last-child {
   }
 
   .confirm {
-    width: 480px;
-    margin: auto;
+    width: fit-content;
+    margin: 0 auto;
+    height: fit-content;
   }
 }
 
