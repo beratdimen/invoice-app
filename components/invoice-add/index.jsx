@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import InvoiceAddPage from "@/components/fatura-ekleme";
 import "./style.css";
-import Header from "../header/page";
 import { AddIcon, DownIcon, GoBack } from "@/helpers/icons";
 
 export default function AddInvoices({ data }) {
