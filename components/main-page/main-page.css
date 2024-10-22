@@ -85,6 +85,8 @@ dialog {
   padding: 0px 24px;
   transition: width 0.8s ease;
   top: 80px;
+  max-width: 640px;
+
 
   .back-button {
     color: #0C0E16;
@@ -118,4 +120,20 @@ dialog {
     border: 2px solid transparent;
   }
 
+}
+
+@media(width >= 1110px) {
+  .main-page {
+    .add-invoices-header {
+      margin: 64px auto;
+      min-width: 730px;
+    }
+  }
+
+  dialog {
+    max-width: 640px;
+    max-height: 100vh;
+    top: 0px;
+    left: 80px;
+  }
 }

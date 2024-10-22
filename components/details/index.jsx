@@ -28,6 +28,7 @@ export default function Details() {
           <GoBack /> Geri Dön
         </Link>
       </div>
+      
       <div className="desktopButtons">
         <div className="status">
           <p>Status</p>
@@ -56,13 +57,14 @@ export default function Details() {
       </div>
 
       <div className="desktopAddressMail">
-        <Customer />
+        {/* <Customer /> */}
 
         <div className="customerEmail">
           <p>Gönderilen</p>
           <strong>alexgrim@mail.com</strong>
         </div>
       </div>
+
       <div className="cart">
         <div className="cartSections">
           <p>Ürün Adı</p>

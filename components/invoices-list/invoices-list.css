@@ -141,3 +141,11 @@
     }
   }
 }
+
+@media(width >= 1110px) {
+  .invoices-list {
+    .invoice-card {
+      margin-inline: 0px;
+    }
+  }
+}

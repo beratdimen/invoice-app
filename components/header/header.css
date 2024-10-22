@@ -17,3 +17,20 @@
     margin: 24px;
   }
 }
+
+@media(width >= 1110px) {
+  .header {
+    flex-direction: column;
+    width: 80px;
+    height: 100vh;
+    border-radius: 0px 24px 0px 0px;
+
+    .page-logo {
+      margin-bottom: auto;
+    }
+  
+    .dark-mode {
+      border-bottom: 1px solid #494e6e;
+    }
+  }
+}
