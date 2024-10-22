@@ -66,6 +66,7 @@ form {
 
 input,
 select {
+  width: 100%;
   padding: 15px 20px;
   border-radius: 4px;
   color: #0c0e16;
@@ -75,6 +76,10 @@ select {
   letter-spacing: -0.25px;
   text-align: left;
   border: 1px solid #dfe3fa;
+}
+
+a, button {
+  cursor: pointer;
 }
 
 @media (width >=768px) {

@@ -1,0 +1,9 @@
+@media(width >= 1110px) {
+    .container {
+        display: flex;
+    }
+
+    .details-page {
+        margin: 64px auto;
+    }
+  }
