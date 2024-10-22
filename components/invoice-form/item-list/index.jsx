@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./item-list.css";
-import NewItemComponent from "./server-side";
+import NewItemCreate from "./new-item-create";
 
 export default function ItemList({ error }) {
   const [newItem, setNewItem] = useState([]);
@@ -17,11 +17,7 @@ export default function ItemList({ error }) {
         ))}
       </div>
 
-      <button
-        type="button"
-        className="add-new-button"
-        onClick={() => setNewItem([...newItem, NewItemComponent({ error })])}
-      >
+      <button type="button" className="add-new-button" onClick={() => setNewItem([...newItem, NewItemCreate({ error })])}>
         + Yeni Öğe Ekle
       </button>
     </div>

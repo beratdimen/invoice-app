@@ -1,9 +1,11 @@
 "use client";
+
 import { GoBack } from "@/helpers/icons";
-import "./style.css";
+import "./details-page.css";
 import Link from "next/link";
 import { useRef } from "react";
 import Customer from "./serverSide";
+
 export default function Details() {
   const confirmDeleteModal = useRef();
 
@@ -12,6 +14,7 @@ export default function Details() {
       confirmDeleteModal.current.showModal();
     }
   };
+  
   const closeDialog = () => {
     if (confirmDeleteModal.current) {
       confirmDeleteModal.current.close();

@@ -1,18 +1,18 @@
-import Header from "@/components/header/page";
-import AddInvoices from "@/components/main-page";
-import InvoiceCard from "@/components/invoices-list";
+import Header from "@/components/header";
 import { getInvoices } from "@/utils/service";
+import InvoicesList from "@/components/invoices-list";
+import MainPage from "@/components/main-page";
 
 export default async function Home() {
   const data = await getInvoices();
 
   return (
-    <div className="general">
+    <div className="container">
       <Header />
       
-      <div className="kucukGeneral">
-        <AddInvoices />
-        <InvoiceCard data={data} />
+      <div>
+        <MainPage />
+        <InvoicesList data={data} />
       </div>
     </div>
   );

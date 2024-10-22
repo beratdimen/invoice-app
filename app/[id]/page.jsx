@@ -1,11 +1,15 @@
 import Details from "@/components/details";
-import Header from "@/components/header/page";
+import Header from "@/components/header";
 
-export default function DetailsPage(){
+export default function DetailsPage({ params }){
+
   return (
-    <div className="detailsPage">
+    <div className="container">
       <Header />
-      <Details />
+      
+      <div className="details-page">
+        <Details />
+      </div>
     </div>
   )
 }

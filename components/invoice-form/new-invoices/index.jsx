@@ -14,6 +14,7 @@ export default function InvoiceAddPage() {
 
   return (
     <form action={action}>
+      <h1>Yeni Fatura</h1>
       <BillForm error={state.error} />
       <BillTo error={state.error} />
       <ItemList error={state.error} />

@@ -1,4 +1,4 @@
-.bill-from {
+.bill-to-form {
   display: flex;
   flex-direction: column;
   gap: 25px 23px;
@@ -11,7 +11,7 @@
     text-align: left;
   }
 
-  .bill-form-item {
+  .bill-to-form-item {
     display: flex;
     flex-direction: column;
     gap: 9px;
@@ -21,7 +21,7 @@
     display: flex;
     gap: 23px;
 
-    .bill-form-item {
+    .bill-to-form-item {
       flex: 1;
     }
   }
