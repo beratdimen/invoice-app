@@ -1,0 +1,28 @@
+.bill-to-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px 23px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.375px;
+    text-align: left;
+  }
+
+  .bill-to-form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .city-and-post-code {
+    display: flex;
+    gap: 23px;
+
+    .bill-to-form-item {
+      flex: 1;
+    }
+  }
+}

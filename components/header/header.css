@@ -4,40 +4,33 @@
   align-items: center;
   background-color: #373b53;
 
-  .pageLogo {
+  .page-logo {
     margin-right: auto;
   }
 
-  .darkMode {
+  .dark-mode {
     padding: 24px;
     border-right: 1px solid #494e6e;
   }
 
-  .profilePicture {
+  .profile-picture {
     margin: 24px;
   }
 }
 
-@media (width >= 768px) {
+@media(width >= 1110px) {
   .header {
-    display: flex;
     flex-direction: column;
     width: 80px;
     height: 100vh;
     border-radius: 0px 24px 0px 0px;
 
-    .pageLogo {
+    .page-logo {
       margin-bottom: auto;
     }
-
-    .darkMode {
-      padding: 24px;
+  
+    .dark-mode {
       border-bottom: 1px solid #494e6e;
-      border-right: 0;
-    }
-
-    .profilePicture {
-      margin: 24px;
     }
   }
 }

@@ -1,0 +1,139 @@
+.main-page {
+  .add-invoices-header {
+    margin: 32px auto;
+    margin-inline: 24px;
+    align-items: center;
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+
+    h2 {
+      color: #0C0E16;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 22.08px;
+      letter-spacing: -0.75px;
+      display: flex;
+      gap: 3px;
+      flex-direction: column;
+      margin-right: auto;
+
+      span {
+        color: #888EB0;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: -0.10000000149011612px;
+      }
+    }
+  }
+
+  .filter {
+    p {
+      color: #0C0E16;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 15px;
+      letter-spacing: -0.25px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-options {
+      display: none;
+
+      p {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+      }
+    }
+    
+    &:hover .filter-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: absolute;
+      padding: 24px;
+      background-color: #FFFFFF;
+      box-shadow: 0px 10px 20px 0px #48549F40;
+      border-radius: 8px;
+    }
+  }
+
+  button {
+    color: #FFFFFF;
+    background-color: #7C5DFA;
+    padding: 8px 14px 8px 8px;
+    border: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    border-radius: 24px;
+  }
+}
+
+dialog {
+  background-color: #FFFFFF;
+  height: 100vh;
+  border: none;
+  padding: 0px 24px;
+  transition: width 0.8s ease;
+  top: 80px;
+  max-width: 640px;
+
+
+  .back-button {
+    color: #0C0E16;
+    display: flex;
+    gap: 23px;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    margin: 23px 0px;
+  }
+
+  .dialog-content {
+    padding: 0px 24px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #DFE3FA;
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+
+}
+
+@media(width >= 1110px) {
+  .main-page {
+    .add-invoices-header {
+      margin: 64px auto;
+      min-width: 730px;
+    }
+  }
+
+  dialog {
+    max-width: 640px;
+    max-height: 100vh;
+    top: 0px;
+    left: 80px;
+  }
+}

@@ -1,10 +1,11 @@
 import FormValidation from "@/actions/form";
-import BillForm from "@/components/bill-form";
-import BillTo from "@/components/bill-to";
-import FormButtons from "@/components/form-buttons";
-import ItemList from "@/components/item-list/page";
+import BillForm from "@/components/invoice-form/bill-form";
+import BillTo from "@/components/invoice-form/bill-to";
+import FormButtons from "@/components/invoice-form/form-buttons";
 import { useFormState } from "react-dom";
 import "./style.css";
+import ItemList from "../item-list";
+
 export default function InvoiceAddPage() {
   const [state, action] = useFormState(FormValidation, {
     message: null,
@@ -13,6 +14,7 @@ export default function InvoiceAddPage() {
 
   return (
     <form action={action}>
+      <h1>Yeni Fatura</h1>
       <BillForm error={state.error} />
       <BillTo error={state.error} />
       <ItemList error={state.error} />
