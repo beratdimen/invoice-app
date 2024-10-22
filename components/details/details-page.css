@@ -170,6 +170,7 @@ button:last-child {
   justify-content: space-between;
   padding: 37px 0;
   margin-bottom: 16px;
+
   span {
     font-size: 15px;
     font-weight: 700;
@@ -182,6 +183,7 @@ button:last-child {
 
 .return {
   padding-top: 33px;
+
   a {
     display: flex;
     align-items: end;
@@ -237,10 +239,12 @@ button:last-child {
   .detailsContainer {
     padding-inline: 32px;
   }
+
   .desktopAdress {
     display: flex;
     justify-content: space-between;
   }
+
   .companyAddress p {
     text-align: right;
   }
@@ -249,6 +253,7 @@ button:last-child {
     display: flex;
     gap: 117px;
   }
+
   .billDatenAddress {
     gap: 117px;
   }
@@ -266,6 +271,7 @@ button:last-child {
     display: flex;
     padding-inline: 32px;
   }
+
   .cart {
     display: grid;
     gap: 32px;
@@ -297,6 +303,7 @@ button:last-child {
   .cartItemDesktop input:nth-child(2) {
     margin-right: -30px;
   }
+
   .cartItemDesktop input:nth-child(3) {
     margin-right: 60px;
   }
@@ -324,6 +331,7 @@ button:last-child {
 
   .confirm {
     width: 480px;
+    margin: auto;
   }
 }
 
