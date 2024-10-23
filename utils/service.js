@@ -40,6 +40,18 @@ export const postInvoinces = async (formData) => {
   return response;
 };
 
+export const updateInvoinces = async (formData) => {
+  console.log("formData :>> ", formData);
+  const response = await advancedFetch(
+    `api/Invoice/SaveInvoice`,
+    "POST",
+    formData
+  );
+  console.log("response :>> ", response);
+  console.log("eklenmis olabilirim :>> ");
+  return response;
+};
+
 export const postClients = async (formData) => {
   debugger;
   const response = await advancedFetch(`SaveClient`, "POST", formData);

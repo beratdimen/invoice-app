@@ -1,6 +1,6 @@
 import "./bill-to.css";
 
-export default function BillTo({ error, data, user }) {
+export default function BillTo({ error, data, user, invoinceData }) {
   return (
     <div className="bill-to-form">
       <h3>Fatura Sahibi</h3>
@@ -13,7 +13,7 @@ export default function BillTo({ error, data, user }) {
           placeholder="Ad"
           id="userName"
           list="userNames"
-          defaultValue={user?.name}
+          defaultValue={invoinceData ? invoinceData?.client?.name : user?.name}
         />
         {error?.userName && <p className="error">{error.userName}</p>}
         <datalist id="userNames">
@@ -30,7 +30,9 @@ export default function BillTo({ error, data, user }) {
           placeholder="E-Posta"
           name="userEmail"
           id="userEmail"
-          defaultValue={user?.email}
+          defaultValue={
+            invoinceData ? invoinceData?.client?.email : user?.email
+          }
         />
         {error?.userEmail && <p className="error">{error.userEmail}</p>}
       </div>
@@ -42,7 +44,9 @@ export default function BillTo({ error, data, user }) {
           placeholder="Adres"
           name="userAddress"
           id="userAddress"
-          defaultValue={user?.address}
+          defaultValue={
+            invoinceData ? invoinceData?.client?.address : user?.address
+          }
         />
         {error?.userAddress && <p className="error">{error.userAddress}</p>}
       </div>
@@ -55,7 +59,9 @@ export default function BillTo({ error, data, user }) {
             placeholder="Şehir"
             name="city"
             id="city"
-            defaultValue={user?.city}
+            defaultValue={
+              invoinceData ? invoinceData?.client?.city : user?.city
+            }
           />
           {error?.city && <p className="error">{error.city}</p>}
         </div>
@@ -67,7 +73,9 @@ export default function BillTo({ error, data, user }) {
             placeholder="Posta Kodu"
             name="postCode"
             id="postCode"
-            defaultValue={user?.postCode}
+            defaultValue={
+              invoinceData ? invoinceData?.client?.postCode : user?.postCode
+            }
           />
           {error?.postCode && <p className="error">{error.postCode}</p>}
         </div>
@@ -80,7 +88,9 @@ export default function BillTo({ error, data, user }) {
           placeholder="Ülke"
           name="country"
           id="country"
-          defaultValue={user?.country}
+          defaultValue={
+            invoinceData ? invoinceData?.client?.country : user?.country
+          }
         />
         {error?.country && <p className="error">{error.country}</p>}
       </div>
@@ -92,6 +102,7 @@ export default function BillTo({ error, data, user }) {
           placeholder="Fatura Tarihi"
           name="invoiceDate"
           id="invoiceDate"
+          defaultValue={invoinceData ? invoinceData?.paymentDue : null}
         />
         {error?.invoiceDate && <p className="error">{error.invoiceDate}</p>}
       </div>
@@ -114,6 +125,7 @@ export default function BillTo({ error, data, user }) {
           placeholder="Proje Açıklaması"
           name="projectDescription"
           id="projectDescription"
+          defaultValue={invoinceData ? invoinceData?.description : null}
         />
         {error?.projectDescription && (
           <p className="error">{error.projectDescription}</p>

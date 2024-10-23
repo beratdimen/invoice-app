@@ -1,11 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./item-list.css";
 import NewItemCreate from "./new-item-create";
 
-export default function ItemList({ error }) {
+export default function ItemList({ error, invoinceData }) {
   const [newItem, setNewItem] = useState([]);
+
+  useEffect(() => {
+    invoinceData?.items?.map((x) => {
+      setNewItem([...newItem, NewItemCreate({ error, invoinceData })]);
+    });
+  }, []);
 
   return (
     <div className="item-list">
@@ -17,7 +23,13 @@ export default function ItemList({ error }) {
         ))}
       </div>
 
-      <button type="button" className="add-new-button" onClick={() => setNewItem([...newItem, NewItemCreate({ error })])}>
+      <button
+        type="button"
+        className="add-new-button"
+        onClick={() =>
+          setNewItem([...newItem, NewItemCreate({ error, invoinceData })])
+        }
+      >
         + Yeni Öğe Ekle
       </button>
     </div>

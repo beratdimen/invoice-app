@@ -2,9 +2,11 @@
 
 import { getInvoices, postClients, postInvoinces } from "@/utils/service";
 
-export default async function FormValidation(prevState, formData) {
+export default async function FormValidation(prevState, formData, page, id) {
   const formObj = Object.fromEntries(formData);
   console.log(formObj);
+  console.log("page", page);
+  console.log("id", id);
 
   const errors = {
     fromStreet: !formObj.fromStreet && "Sokak alanı boş olamaz.",
@@ -31,51 +33,81 @@ export default async function FormValidation(prevState, formData) {
   );
 
   console.log("errors :>> ", filteredErrors);
-  debugger;
 
   if (Object.keys(filteredErrors).length > 0) {
     return { error: filteredErrors };
   }
 
-  const clientData = {
-    name: formObj.userName,
-    email: formObj.userEmail,
-    address: formObj.userAddress,
-    city: formObj.city,
-    postCode: formObj.postCode,
-    country: formObj.country,
-  };
+  if (page === "edit") {
+    const editInvoiceData = {
+      id: id,
+      invoiceName: formObj.fromStreet,
+      description: formObj.projectDescription,
+      createdTime: formObj.invoiceDate,
+      items: [
+        {
+          id: 0,
+          name: formObj.itemName,
+          quantity: formObj.qty,
+          price: formObj.price,
+        },
+      ],
+      paymentStatus: 1,
+      clientId: 1,
+      paymentTerm: Number(formObj.paymentDate),
+    };
 
-  console.log("clientData :>> ", clientData);
+    console.log("editInvoiceData :>> ", JSON.stringify(editInvoiceData));
+    const responseInvoince = await postInvoinces(
+      JSON.stringify(editInvoiceData)
+    );
+    console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
 
-  const responseClient = await postClients(JSON.stringify(clientData));
-  debugger;
-  console.log("responseClient :>> ", responseClient);
+    if (!responseInvoince) {
+      const errorMessage = await responseInvoince.text();
+      throw new Error(`Error: ${responseInvoince.status} - ${errorMessage}`);
+    }
+  } else {
+    const clientData = {
+      name: formObj.userName,
+      email: formObj.userEmail,
+      address: formObj.userAddress,
+      city: formObj.city,
+      postCode: formObj.postCode,
+      country: formObj.country,
+    };
 
-  const invoiceData = {
-    invoiceName: formObj.fromStreet,
-    description: formObj.projectDescription,
-    createdTime: formObj.invoiceDate,
-    items: [
-      {
-        name: formObj.itemName,
-        quantity: formObj.qty,
-        price: formObj.price,
-        total: formObj.qty * formObj.price,
-      },
-    ],
-    paymentStatus: 1,
-    clientId: responseClient?.id,
-    paymentTerm: Number(formObj.paymentDate),
-  };
+    console.log("clientData :>> ", clientData);
 
-  console.log("invoiceData :>> ", JSON.stringify(invoiceData));
-  const responseInvoince = await postInvoinces(JSON.stringify(invoiceData));
-  console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
+    const responseClient = await postClients(JSON.stringify(clientData));
+    debugger;
+    console.log("responseClient :>> ", responseClient);
 
-  if (!responseInvoince) {
-    const errorMessage = await responseInvoince.text();
-    throw new Error(`Error: ${responseInvoince.status} - ${errorMessage}`);
+    const invoiceData = {
+      invoiceName: formObj.fromStreet,
+      description: formObj.projectDescription,
+      createdTime: formObj.invoiceDate,
+      items: [
+        {
+          name: formObj.itemName,
+          quantity: formObj.qty,
+          price: formObj.price,
+          total: formObj.qty * formObj.price,
+        },
+      ],
+      paymentStatus: 1,
+      clientId: 1, //responseClient?.id,
+      paymentTerm: Number(formObj.paymentDate),
+    };
+
+    console.log("invoiceData :>> ", JSON.stringify(invoiceData));
+    const responseInvoince = await postInvoinces(JSON.stringify(invoiceData));
+    console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
+
+    if (!responseInvoince) {
+      const errorMessage = await responseInvoince.text();
+      throw new Error(`Error: ${responseInvoince.status} - ${errorMessage}`);
+    }
   }
 
   return { message: "Başarılı", reset: true };

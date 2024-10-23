@@ -3,8 +3,9 @@ import "./details-page.css";
 import Link from "next/link";
 import { toast } from "sonner";
 import DetailDeleteModal from "./delete-modal";
+import DetailEditModal from "./edit-modal";
 
-export default async function Details({ data }) {
+export default async function Details({ data, dataAll }) {
   return (
     <div className="detailsContainer">
       <div className="return">
@@ -23,30 +24,30 @@ export default async function Details({ data }) {
                   data.paymentStatus == 2
                     ? "pending"
                     : data.paymentStatus == 3
-                      ? "paid"
-                      : "draft"
+                    ? "paid"
+                    : "draft"
                 }
               >
                 {data.paymentStatus == 2
                   ? " ● Pending"
                   : data.paymentStatus == 3
-                    ? "● Paid"
-                    : "● Draft"}
+                  ? "● Paid"
+                  : "● Draft"}
               </p>
             </div>
           </div>
           <div className="detailsButtons desktop">
-            <button>Düzenle</button>
+            <DetailEditModal data={data} dataAll={dataAll} />
             <DetailDeleteModal data={data} />
             <button>Ödeme Yapıldı</button>
           </div>
         </div>
         <div className="idAddress">
           <div className="billIdnCat">
-                <h3>
-                  <strong>{data?.invoiceName}</strong>
-                </h3>
-                <p>{data?.description}placeholder</p>
+            <h3>
+              <strong>{data?.invoiceName}</strong>
+            </h3>
+            <p>{data?.description}placeholder</p>
           </div>
           <div className="companyAddress">
             <p>placeholder</p>
@@ -57,7 +58,6 @@ export default async function Details({ data }) {
         </div>
         <div className="desktopAddressMail">
           <div className="desktopAdress">
-        
             <div className="dateDue">
               <div className="billDate">
                 <p>Fatura Tarihi</p>
@@ -123,11 +123,11 @@ export default async function Details({ data }) {
           </div>
         </div>
       </div>
-        <div className="detailsButtons mobile">
-          <button>Düzenle</button>
-          <DetailDeleteModal data={data} />
-          <button>Ödeme Yapıldı</button>
-        </div>
+      <div className="detailsButtons mobile">
+        <button>Düzenle</button>
+        <DetailDeleteModal data={data} />
+        <button>Ödeme Yapıldı</button>
+      </div>
     </div>
   );
 }

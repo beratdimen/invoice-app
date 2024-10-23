@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./bill-form.css";
 
-export default function BillForm({ error, user }) {
+export default function BillForm({ error, user, invoinceData }) {
   return (
     <div className="bill-from">
       <h3>Fatura Gönderen</h3>
@@ -9,7 +9,9 @@ export default function BillForm({ error, user }) {
       <div className="bill-form-item">
         <label htmlFor="fromStreet">Sokak</label>
         <input
-          defaultValue={user?.invoinceName}
+          defaultValue={
+            invoinceData ? invoinceData?.invoiceName : user?.invoinceName
+          }
           type="text"
           id="fromStreet"
           name="fromStreet"
@@ -23,7 +25,9 @@ export default function BillForm({ error, user }) {
         <div className="bill-form-item">
           <label htmlFor="fromCity">Şehir</label>
           <input
-            defaultValue={user?.city}
+            defaultValue={
+              invoinceData ? invoinceData?.client?.city : user?.city
+            }
             type="text"
             id="fromCity"
             name="fromCity"
@@ -35,7 +39,9 @@ export default function BillForm({ error, user }) {
         <div className="bill-form-item">
           <label htmlFor="fromPostCode">Posta Kodu</label>
           <input
-            defaultValue={user?.postCode}
+            defaultValue={
+              invoinceData ? invoinceData?.client?.postCode : user?.postCode
+            }
             type="text"
             id="fromPostCode"
             name="fromPostCode"
@@ -48,7 +54,9 @@ export default function BillForm({ error, user }) {
       <div className="bill-form-item">
         <label htmlFor="fromCountry">Ülke</label>
         <input
-          defaultValue={user?.country}
+          defaultValue={
+            invoinceData ? invoinceData?.client?.country : user?.country
+          }
           type="text"
           id="fromCountry"
           name="fromCountry"

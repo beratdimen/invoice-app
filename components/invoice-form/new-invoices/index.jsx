@@ -9,20 +9,32 @@ import { toast } from "sonner";
 import { useEffect, useState } from "react";
 import { getClients } from "@/utils/service";
 
-export default function InvoiceAddPage({ data, closeDialog }) {
+export default function InvoiceAddPage({
+  data,
+  closeDialog,
+  page = "create",
+  invoinceData = null,
+  closeEditDialog,
+}) {
   const [searchedUsers, setSearchedUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [user, setUser] = useState({});
 
-  const [state, action] = useFormState(FormValidation, {
-    message: null,
-    error: null,
-  });
+  const [state, action] = useFormState(
+    (prevState, formData) =>
+      FormValidation(prevState, formData, page, invoinceData?.id),
+    {
+      message: null,
+      error: null,
+    }
+  );
 
   useEffect(() => {
     if (state?.message === "Başarılı") {
-      toast.success("BAŞARIYLA EKLENDİ");
-      closeDialog();
+      toast.success(
+        page === "create" ? "Başarıyla Eklendi" : "Başarıyla Güncellendi"
+      );
+      closeEditDialog();
     }
   }, [state?.message]);
 
@@ -44,24 +56,34 @@ export default function InvoiceAddPage({ data, closeDialog }) {
 
   return (
     <form action={action}>
-      <h1>Yeni Fatura</h1>
-      <select
-        name="getClients"
-        id=""
-        onChange={(e) => setSelectedUser(e.target.value)}
-        onBlur={(e) => setSelectedUser(e.target.value)}
-        onClick={handleInput}
-      >
-        {searchedUsers.map((x) => (
-          <option value={x?.id}>
-            {x.name}- {x.address}
-          </option>
-        ))}
-      </select>
-      <BillForm error={state?.error} user={user} />
-      <BillTo error={state?.error} data={data} user={user} />
-      <ItemList error={state?.error} />
-      <FormButtons />
+      {page == "create" && (
+        <>
+          <h1>Yeni Fatura</h1>
+          <select
+            name="getClients"
+            id=""
+            onChange={(e) => setSelectedUser(e.target.value)}
+            onBlur={(e) => setSelectedUser(e.target.value)}
+            onClick={handleInput}
+          >
+            {searchedUsers.map((x) => (
+              <option value={x?.id}>
+                {x.name}- {x.address}
+              </option>
+            ))}
+          </select>
+        </>
+      )}
+      <BillForm error={state?.error} user={user} invoinceData={invoinceData} />
+      <BillTo error={state?.error} data={data} invoinceData={invoinceData} />
+      <ItemList error={state?.error} invoinceData={invoinceData} />
+      {page === "create" && <FormButtons />}
+      {page === "edit" && (
+        <div className="confirmButtons">
+          <button onClick={closeEditDialog}>Vazgeç</button>
+          <button>Güncelle</button>
+        </div>
+      )}
     </form>
   );
 }
