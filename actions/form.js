@@ -1,6 +1,6 @@
 "use server";
 
-import { getInvoices, postClients, postInvoinces } from "@/utils/service";
+import { postClients, postInvoinces } from "@/utils/service";
 
 export default async function FormValidation(prevState, formData, page, id) {
   const formObj = Object.fromEntries(formData);

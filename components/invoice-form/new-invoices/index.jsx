@@ -30,11 +30,20 @@ export default function InvoiceAddPage({
   );
 
   useEffect(() => {
-    if (state?.message === "Başarılı") {
-      toast.success(
-        page === "create" ? "Başarıyla Eklendi" : "Başarıyla Güncellendi"
-      );
-      closeEditDialog();
+    if (page === "create") {
+      if (state?.message === "Başarılı") {
+        toast.success(
+          page === "create" ? "Başarıyla Eklendi" : "Başarıyla Güncellendi"
+        );
+        closeDialog();
+      }
+    } else {
+      if (state?.message === "Başarılı") {
+        toast.success(
+          page === "create" ? "Başarıyla Eklendi" : "Başarıyla Güncellendi"
+        );
+        closeEditDialog();
+      }
     }
   }, [state?.message]);
 
