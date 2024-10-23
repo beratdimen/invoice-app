@@ -46,3 +46,10 @@ export const postClients = async (formData) => {
   console.log(response, "deneme client fetch");
   return response;
 };
+
+export const getClients = async () => {
+  debugger;
+  const response = await advancedFetch(`api/Client/GetClients`);
+  console.log(response, "deneme getclient fetch");
+  return response;
+};

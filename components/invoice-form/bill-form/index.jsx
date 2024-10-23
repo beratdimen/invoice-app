@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import "./bill-form.css";
 
-export default function BillForm({ error }) {
+export default function BillForm({ error, user }) {
   return (
     <div className="bill-from">
       <h3>Fatura Gönderen</h3>
@@ -8,6 +9,7 @@ export default function BillForm({ error }) {
       <div className="bill-form-item">
         <label htmlFor="fromStreet">Sokak</label>
         <input
+          defaultValue={user?.invoinceName}
           type="text"
           id="fromStreet"
           name="fromStreet"
@@ -21,6 +23,7 @@ export default function BillForm({ error }) {
         <div className="bill-form-item">
           <label htmlFor="fromCity">Şehir</label>
           <input
+            defaultValue={user?.city}
             type="text"
             id="fromCity"
             name="fromCity"
@@ -32,6 +35,7 @@ export default function BillForm({ error }) {
         <div className="bill-form-item">
           <label htmlFor="fromPostCode">Posta Kodu</label>
           <input
+            defaultValue={user?.postCode}
             type="text"
             id="fromPostCode"
             name="fromPostCode"
@@ -44,6 +48,7 @@ export default function BillForm({ error }) {
       <div className="bill-form-item">
         <label htmlFor="fromCountry">Ülke</label>
         <input
+          defaultValue={user?.country}
           type="text"
           id="fromCountry"
           name="fromCountry"

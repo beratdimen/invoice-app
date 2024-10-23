@@ -21,7 +21,10 @@ export const advancedFetch = async (url, method = "GET", data = null) => {
   console.log("response :>> ", response);
 
   if (method === "DELETE") return response;
+  if (url === "SaveClient") return response;
   if (!response?.ok) redirect("/");
   const responseData = await response.json();
+
+  console.log("responseData :>> ", responseData);
   return responseData;
 };

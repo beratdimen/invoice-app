@@ -1,6 +1,6 @@
 import "./bill-to.css";
 
-export default function BillTo({ error, data }) {
+export default function BillTo({ error, data, user }) {
   return (
     <div className="bill-to-form">
       <h3>Fatura Sahibi</h3>
@@ -13,6 +13,7 @@ export default function BillTo({ error, data }) {
           placeholder="Ad"
           id="userName"
           list="userNames"
+          defaultValue={user?.name}
         />
         {error?.userName && <p className="error">{error.userName}</p>}
         <datalist id="userNames">
@@ -29,6 +30,7 @@ export default function BillTo({ error, data }) {
           placeholder="E-Posta"
           name="userEmail"
           id="userEmail"
+          defaultValue={user?.email}
         />
         {error?.userEmail && <p className="error">{error.userEmail}</p>}
       </div>
@@ -40,6 +42,7 @@ export default function BillTo({ error, data }) {
           placeholder="Adres"
           name="userAddress"
           id="userAddress"
+          defaultValue={user?.address}
         />
         {error?.userAddress && <p className="error">{error.userAddress}</p>}
       </div>
@@ -47,7 +50,13 @@ export default function BillTo({ error, data }) {
       <div className="city-and-post-code">
         <div className="bill-to-form-item">
           <label htmlFor="city">Şehir</label>
-          <input type="text" placeholder="Şehir" name="city" id="city" />
+          <input
+            type="text"
+            placeholder="Şehir"
+            name="city"
+            id="city"
+            defaultValue={user?.city}
+          />
           {error?.city && <p className="error">{error.city}</p>}
         </div>
 
@@ -58,6 +67,7 @@ export default function BillTo({ error, data }) {
             placeholder="Posta Kodu"
             name="postCode"
             id="postCode"
+            defaultValue={user?.postCode}
           />
           {error?.postCode && <p className="error">{error.postCode}</p>}
         </div>
@@ -65,7 +75,13 @@ export default function BillTo({ error, data }) {
 
       <div className="bill-to-form-item">
         <label htmlFor="country">Ülke</label>
-        <input type="text" placeholder="Ülke" name="country" id="country" />
+        <input
+          type="text"
+          placeholder="Ülke"
+          name="country"
+          id="country"
+          defaultValue={user?.country}
+        />
         {error?.country && <p className="error">{error.country}</p>}
       </div>
 

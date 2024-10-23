@@ -48,8 +48,9 @@ export default async function FormValidation(prevState, formData) {
 
   console.log("clientData :>> ", clientData);
 
-  // const responseClient = await postClients(clientData);
-  // console.log("responseClient :>> ", responseClient);
+  const responseClient = await postClients(JSON.stringify(clientData));
+  debugger;
+  console.log("responseClient :>> ", responseClient);
 
   const invoiceData = {
     invoiceName: formObj.fromStreet,
@@ -64,7 +65,7 @@ export default async function FormValidation(prevState, formData) {
       },
     ],
     paymentStatus: 1,
-    clientId: 1,
+    clientId: responseClient?.id,
     paymentTerm: Number(formObj.paymentDate),
   };
 
