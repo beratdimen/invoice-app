@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import "./item-list.css";
 import NewItemCreate from "./new-item-create";
 
+
 export default function ItemList({ error, invoinceData }) {
   const [newItem, setNewItem] = useState([]);
 
+  
   useEffect(() => {
     invoinceData?.items?.map((x) => {
       setNewItem([...newItem, NewItemCreate({ error, invoinceData })]);
@@ -19,7 +21,7 @@ export default function ItemList({ error, invoinceData }) {
 
       <div className="items">
         {newItem.map((x) => (
-          <div className="new-it">{x}</div>
+          <div datasetId={makeId()} className="new-it">{x}</div>
         ))}
       </div>
 

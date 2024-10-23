@@ -8,7 +8,7 @@ export default function DeleteButton(e) {
     }
 
     return (
-        <button className="delete-button" onClick={handleClick(e)}>
+        <button type="button"  className="delete-button" onClick={handleClick(e)}>
             <DeleteIcon />
         </button>
     )

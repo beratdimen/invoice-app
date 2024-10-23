@@ -1,23 +1,10 @@
 import DeleteButton from "./item-list-delete-button/page";
 
+
 export default function NewItemCreate({ error, invoinceData }) {
-  function makeid(length) {
-    let result = "";
-    const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    const charactersLength = characters.length;
-    let counter = 0;
-
-    while (counter < length) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      counter += 1;
-    }
-
-    return result;
-  }
 
   return (
-    <div className="new-item-form" key={makeid(6)}>
+    <div className="new-item-form">
       <div className="form-item">
         <label htmlFor="itemName">Öğe Adı</label>
         <input
@@ -70,8 +57,8 @@ export default function NewItemCreate({ error, invoinceData }) {
           {error?.total && <p className="error">{error.total}</p>}
         </div>
 
-        <input type="hidden" value={makeid(6)} />
-        <DeleteButton makeid={makeid(6)} />
+        
+        <DeleteButton />
       </div>
     </div>
   );
