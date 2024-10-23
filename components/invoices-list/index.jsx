@@ -1,16 +1,8 @@
 import Link from "next/link";
 import "./invoices-list.css";
+import { formatDate } from "@/utils/format-date";
 
-export default async function InvoicesList({ data }) {
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-
-    const day = date.getDate().toString().padStart(2, "0");
-    const month = date.toLocaleString("tr-TR", { month: "long" });
-    const year = date.getFullYear().toString().padStart(4, "0");
-
-    return `${day} ${month} ${year}`;
-  };
+export default function InvoicesList({ data }) {
   return (
     <div className="invoices-list">
       {data?.map((x) => (

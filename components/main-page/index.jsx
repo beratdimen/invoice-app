@@ -1,12 +1,15 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import InvoiceAddPage from "@/components/invoice-form/new-invoices";
 import { AddIcon, DownIcon, GoBack } from "@/helpers/icons";
 import "./main-page.css";
+import InvoicesList from "../invoices-list";
 
 export default function MainPage({ data }) {
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState([]);
+  const [filteredData, setFilteredData] = useState(data);
   const modalRef = useRef();
 
   const openDialog = () => {
@@ -25,7 +28,15 @@ export default function MainPage({ data }) {
     }
   };
 
-  console.log("datamgeldi :>> ", data);
+  useEffect(() => {
+    if (value.length > 0) {
+      const result = data.filter((x) => value.includes(x.paymentStatus));
+      setFilteredData(result);
+      console.log("Filtered Data:>> ", result);
+    } else {
+      setFilteredData(data);
+    }
+  }, [value]);
 
   return (
     <>
@@ -42,13 +53,40 @@ export default function MainPage({ data }) {
 
             <div className="filter-options">
               <p>
-                <input type="checkbox" /> Draft
+                <input
+                  type="checkbox"
+                  value={1}
+                  onChange={(e) => {
+                    value.includes(1)
+                      ? setValue(value.filter((x) => x !== 1))
+                      : setValue([...value, 1]);
+                  }}
+                />
+                Draft
               </p>
               <p>
-                <input type="checkbox" /> Panding
+                <input
+                  type="checkbox"
+                  value={2}
+                  onChange={(e) => {
+                    value.includes(2)
+                      ? setValue(value.filter((x) => x !== 2))
+                      : setValue([...value, 2]);
+                  }}
+                />
+                Pending
               </p>
               <p>
-                <input type="checkbox" /> Paid
+                <input
+                  type="checkbox"
+                  value={3}
+                  onChange={(e) => {
+                    value.includes(3)
+                      ? setValue(value.filter((x) => x !== 3))
+                      : setValue([...value, 3]);
+                  }}
+                />
+                Paid
               </p>
             </div>
           </div>
@@ -58,6 +96,8 @@ export default function MainPage({ data }) {
           </button>
         </div>
       </div>
+
+      <InvoicesList data={filteredData} />
 
       <dialog
         className="dialog-form"
