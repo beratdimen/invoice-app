@@ -21,6 +21,7 @@
 
 @media (width >= 1110px) {
   .header {
+    position: fixed;
     flex-direction: column;
     width: 80px;
     height: 100vh;
@@ -32,6 +33,7 @@
 
     .dark-mode {
       border-bottom: 1px solid #494e6e;
+      border-right: 0;
     }
   }
 }
