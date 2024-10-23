@@ -46,6 +46,11 @@ p {
   }
 }
 
+.desktopAdress {
+  display: flex;
+  gap: 61px;
+}
+
 .situation {
   .pending {
     color: #ff8f00;
@@ -78,6 +83,23 @@ p {
     font-weight: 700;
     line-height: 15px;
     letter-spacing: -0.25px;
+  }
+}
+
+.customer {
+  margin-bottom: 7px;
+
+  p{
+    margin-bottom: 13px;
+  }
+}
+
+.dateDue {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  .billDate p {
+    margin-bottom: 13px;
   }
 }
 
@@ -119,11 +141,12 @@ p {
 
 .cartItemDesktop {
   display: none;
+  padding-inline: 32px;
 }
 
 .cartItem {
   display: flex;
-  gap: 83px;
+  justify-content: space-between;
   align-items: center;
   padding: 24px;
   p {
@@ -162,6 +185,10 @@ p {
   padding-inline: 24px;
   max-width: 730px;
   margin: 0 auto;
+}
+
+.contentContainer {
+  padding: 24px;
 }
 
 .detailsButtons {
@@ -278,16 +305,20 @@ button:last-child {
 
   .desktopAdress {
     display: flex;
-    justify-content: space-between;
+    gap: 118px;
   }
 
-  .companyAddress p {
-    text-align: right;
+  .companyAddress {
+
+    p {
+      text-align: right;
+    }
   }
 
   .desktopAddressMail {
     display: flex;
     gap: 117px;
+    margin-bottom: 47px;
   }
 
   .billDatenAddress {
@@ -299,13 +330,37 @@ button:last-child {
   }
 
   .cartSections {
-    display: flex;
-    padding: 32px 32px 0 32px;
+    display: grid;
+   grid-template-columns: 5fr 1fr 1fr 1fr;
+   gap: 70px;
+   padding-inline: 32px;
+   p {
+    text-align: right;
+   }
+  }
+
+  .cartSections p:first-child {
+    text-align: left;
   }
 
   .cartItemDesktop {
-    display: flex;
-    padding-inline: 32px;
+   display: grid;
+   grid-template-columns: 5fr 1fr 1fr 1fr;
+   padding-inline: 32px;
+   gap: 70px;
+
+   strong {
+    display: block;
+   }
+
+   p {
+    display: block;
+    text-align: right;
+   }
+  }
+
+  .cartItemDesktop strong:last-child {
+    text-align: right;
   }
 
   .cart {
@@ -314,35 +369,6 @@ button:last-child {
     text-align: right;
   }
 
-  .cartSections p:first-child {
-    margin-right: 217px;
-  }
-
-  .cartSections p:nth-child(2) {
-    margin-right: 92px;
-  }
-
-  .cartSections p:nth-child(3) {
-    margin-right: 111px;
-  }
-
-  .cartItemDesktop input {
-    border: none;
-    outline: none;
-    padding: 0;
-  }
-
-  .cartItemDesktop input:first-child {
-    margin-right: 190px;
-  }
-
-  .cartItemDesktop input:nth-child(2) {
-    margin-right: -30px;
-  }
-
-  .cartItemDesktop input:nth-child(3) {
-    margin-right: 60px;
-  }
 
   .mobile {
     display: none;
@@ -358,6 +384,7 @@ button:last-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 56px;
   }
 
   .status {
@@ -369,6 +396,19 @@ button:last-child {
     width: fit-content;
     margin: 0 auto;
     height: fit-content;
+  }
+
+  .idAddress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
+  }
+  .contentContainer {
+    padding: 32px;
+  }
+
+  .grandTotal {
+    padding: 25px 32px;
   }
 }
 
@@ -389,4 +429,6 @@ button:last-child {
   .cart {
     margin-bottom: 0;
   }
+
+
 }
