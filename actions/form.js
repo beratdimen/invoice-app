@@ -4,9 +4,9 @@ import { postClients, postInvoinces } from "@/utils/service";
 
 export default async function FormValidation(prevState, formData, page, id) {
   const formObj = Object.fromEntries(formData);
-  console.log(formObj);
-  console.log("page", page);
-  console.log("id", id);
+  // console.log(formObj);
+  // console.log("page", page);
+  // console.log("id", id);
 
   const errors = {
     fromStreet: !formObj.fromStreet && "Sokak alanı boş olamaz.",
@@ -32,7 +32,7 @@ export default async function FormValidation(prevState, formData, page, id) {
     Object.entries(errors).filter(([_, v]) => v)
   );
 
-  console.log("errors :>> ", filteredErrors);
+  // console.log("errors :>> ", filteredErrors);
 
   if (Object.keys(filteredErrors).length > 0) {
     return { error: filteredErrors };
@@ -57,11 +57,11 @@ export default async function FormValidation(prevState, formData, page, id) {
       paymentTerm: Number(formObj.paymentDate),
     };
 
-    console.log("editInvoiceData :>> ", JSON.stringify(editInvoiceData));
+    // console.log("editInvoiceData :>> ", JSON.stringify(editInvoiceData));
     const responseInvoince = await postInvoinces(
       JSON.stringify(editInvoiceData)
     );
-    console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
+    // console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
 
     if (!responseInvoince) {
       const errorMessage = await responseInvoince.text();
@@ -77,11 +77,11 @@ export default async function FormValidation(prevState, formData, page, id) {
       country: formObj.country,
     };
 
-    console.log("clientData :>> ", clientData);
+    // console.log("clientData :>> ", clientData);
 
     const responseClient = await postClients(JSON.stringify(clientData));
     debugger;
-    console.log("responseClient :>> ", responseClient);
+    // console.log("responseClient :>> ", responseClient);
 
     const invoiceData = {
       invoiceName: formObj.fromStreet,
@@ -100,9 +100,9 @@ export default async function FormValidation(prevState, formData, page, id) {
       paymentTerm: Number(formObj.paymentDate),
     };
 
-    console.log("invoiceData :>> ", JSON.stringify(invoiceData));
+    // console.log("invoiceData :>> ", JSON.stringify(invoiceData));
     const responseInvoince = await postInvoinces(JSON.stringify(invoiceData));
-    console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
+    // console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
 
     if (!responseInvoince) {
       const errorMessage = await responseInvoince.text();
