@@ -2,11 +2,10 @@
 
 import { useRef } from "react";
 import "../details-page.css";
-import { useRouter } from "next/navigation";
 import InvoiceAddPage from "@/components/invoice-form/new-invoices";
 
 export default function DetailEditModal({ data, dataAll }) {
-  console.log("data :>> ", data);
+  // console.log("data :>> ", data);
   const confirmDeleteModal = useRef();
 
   const openDialog = () => {

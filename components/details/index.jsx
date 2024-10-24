@@ -1,11 +1,19 @@
+"use client";
 import { GoBack } from "@/helpers/icons";
 import "./details-page.css";
 import Link from "next/link";
 import { toast } from "sonner";
 import DetailDeleteModal from "./delete-modal";
 import DetailEditModal from "./edit-modal";
+import { useState } from "react";
 
-export default async function Details({ data, dataAll }) {
+export default function Details({ data, dataAll }) {
+  const [paymentStatus, setPaymentStatus] = useState(data.paymentStatus);
+
+  const handlePaymentCompleted = () => {
+    setPaymentStatus(3);
+    toast.success("Payment marked as completed!");
+  };
   return (
     <div className="detailsContainer">
       <div className="return">
@@ -21,16 +29,16 @@ export default async function Details({ data, dataAll }) {
             <div className="situation">
               <p
                 className={
-                  data.paymentStatus == 2
+                  paymentStatus == 2
                     ? "pending"
-                    : data.paymentStatus == 3
+                    : paymentStatus == 3
                     ? "paid"
                     : "draft"
                 }
               >
-                {data.paymentStatus == 2
+                {paymentStatus == 2
                   ? " ● Pending"
-                  : data.paymentStatus == 3
+                  : paymentStatus == 3
                   ? "● Paid"
                   : "● Draft"}
               </p>
@@ -39,7 +47,9 @@ export default async function Details({ data, dataAll }) {
           <div className="detailsButtons desktop">
             <DetailEditModal data={data} dataAll={dataAll} />
             <DetailDeleteModal data={data} />
-            <button>Ödeme Yapıldı</button>
+            <button onClick={() => handlePaymentCompleted()}>
+              Ödeme Yapıldı
+            </button>
           </div>
         </div>
         <div className="idAddress">
@@ -126,7 +136,7 @@ export default async function Details({ data, dataAll }) {
       <div className="detailsButtons mobile">
         <button>Düzenle</button>
         <DetailDeleteModal data={data} />
-        <button>Ödeme Yapıldı</button>
+        <button onClick={() => handlePaymentCompleted()}>Ödeme Yapıldı</button>
       </div>
     </div>
   );

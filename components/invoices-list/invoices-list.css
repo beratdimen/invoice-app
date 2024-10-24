@@ -1,7 +1,14 @@
 .invoices-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+  height: 70vh;
+
+  .invoices {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
   .invoice-card {
     background-color: #FFFFFF;
@@ -103,6 +110,31 @@
       }
     }
   }
+
+  .pagination {
+    margin: 0 auto;
+    box-shadow: 0px 10px 10px -10px #48549F1A;
+    border-radius: 24px;
+
+    button {
+      border: none;
+      padding: 8px 16px;
+      background-color: #FFFFFF;
+
+      &:first-child {
+        border-radius: 10px 0px 0px 10px;
+      }
+
+      &:last-child {
+        border-radius: 0px 10px 10px 0px;
+      }
+
+      &:disabled {
+        background-color: #7C5DFA;
+        color: #FFFFFF;
+      }
+    }
+  }
   
   &:has(.invoice-card) .empty-container {
     display: none;
@@ -146,6 +178,36 @@
   .invoices-list {
     .invoice-card {
       margin-inline: 0px;
+      flex-direction: row;
+      justify-content: left;
+      gap: 75px;
+  
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 44px;
+  
+        h2 {
+          min-width: 65px;
+        }
+      }
+  
+      .card-content {
+        gap: 40px;
+        flex: 1;
+
+        .date-price {
+          flex-direction: row;
+          align-items: center;
+          gap: 110px;
+  
+          h3 {
+            min-width: 100px;
+            text-align: end;
+          }
+        }
+      }
     }
   }
 }
