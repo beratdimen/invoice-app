@@ -1,7 +1,7 @@
 import DeleteButton from "./item-list-delete-button/page";
 
 
-export default function NewItemCreate({ error, invoinceData }) {
+export default function NewItemCreate({ error, invoinceData,deleteItem,id }) {
 
   return (
     <div className="new-item-form">
@@ -58,7 +58,7 @@ export default function NewItemCreate({ error, invoinceData }) {
         </div>
 
         
-        <DeleteButton />
+        <DeleteButton deleteItem={deleteItem} id={id} />
       </div>
     </div>
   );

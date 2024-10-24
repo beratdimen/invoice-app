@@ -2,13 +2,13 @@
 
 import { DeleteIcon } from "@/helpers/icons";
 
-export default function DeleteButton(e) {
-    function handleClick() {
-        // console.log(e);
+export default function DeleteButton({deleteItem,id}) {
+    
+    function handleClick(id){  
+        deleteItem(id);
     }
-
     return (
-        <button type="button"  className="delete-button" onClick={handleClick(e)}>
+        <button type="button"  className="delete-button" onClick={()=> handleClick(id)}>
             <DeleteIcon />
         </button>
     )
