@@ -13,6 +13,7 @@ export default async function DetailsPage({ params }) {
   if (result?.ok) {
     redirect("/");
   }
+
   return (
     <div className="container">
       <Header />

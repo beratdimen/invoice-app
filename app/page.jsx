@@ -15,7 +15,7 @@ export default async function Home() {
         <MainPage data={data} />
       </div>
 
-      <Toaster richColors />
+      <Toaster richColors position="top-right" />
     </div>
   );
 }
