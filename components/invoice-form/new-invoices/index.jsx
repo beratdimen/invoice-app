@@ -58,7 +58,7 @@ export default function InvoiceAddPage({
   useEffect(() => {
     const user = searchedUsers.find((x) => x.id == selectedUser);
 
-    console.log("user :>> ", user);
+    // console.log("user :>> ", user);
 
     setUser(user);
   }, [selectedUser]);

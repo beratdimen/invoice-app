@@ -32,7 +32,7 @@ export default function MainPage({ data }) {
     if (value.length > 0) {
       const result = data.filter((x) => value.includes(x.paymentStatus));
       setFilteredData(result);
-      console.log("Filtered Data:>> ", result);
+      // console.log("Filtered Data:>> ", result);
     } else {
       setFilteredData(data);
     }

@@ -29,39 +29,39 @@ export const deleteInvoicesDetail = async (id) => {
 };
 
 export const postInvoinces = async (formData) => {
-  console.log("formData :>> ", formData);
+  // console.log("formData :>> ", formData);
   const response = await advancedFetch(
     `api/Invoice/SaveInvoice`,
     "POST",
     formData
   );
-  console.log("response :>> ", response);
-  console.log("eklenmis olabilirim :>> ");
+  // console.log("response :>> ", response);
+  // console.log("eklenmis olabilirim :>> ");
   return response;
 };
 
 export const updateInvoinces = async (formData) => {
-  console.log("formData :>> ", formData);
+  // console.log("formData :>> ", formData);
   const response = await advancedFetch(
     `api/Invoice/SaveInvoice`,
     "POST",
     formData
   );
-  console.log("response :>> ", response);
-  console.log("eklenmis olabilirim :>> ");
+  // console.log("response :>> ", response);
+  // console.log("eklenmis olabilirim :>> ");
   return response;
 };
 
 export const postClients = async (formData) => {
   debugger;
   const response = await advancedFetch(`SaveClient`, "POST", formData);
-  console.log(response, "deneme client fetch");
+  // console.log(response, "deneme client fetch");
   return response;
 };
 
 export const getClients = async () => {
   debugger;
   const response = await advancedFetch(`api/Client/GetClients`);
-  console.log(response, "deneme getclient fetch");
+  // console.log(response, "deneme getclient fetch");
   return response;
 };

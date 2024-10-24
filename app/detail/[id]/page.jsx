@@ -7,7 +7,7 @@ export default async function DetailsPage({ params }) {
   const data = await getInvoicesDetail(Number(params?.id));
   const dataAll = await getInvoices();
 
-  console.log("data :>> ", data);
+  // console.log("data :>> ", data);
   return (
     <div className="container">
       <Header />

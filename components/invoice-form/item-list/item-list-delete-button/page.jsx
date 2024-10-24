@@ -4,7 +4,7 @@ import { DeleteIcon } from "@/helpers/icons";
 
 export default function DeleteButton(e) {
     function handleClick() {
-        console.log(e);
+        // console.log(e);
     }
 
     return (

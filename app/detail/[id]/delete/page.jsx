@@ -8,7 +8,7 @@ export default async function DetailsPage({ params }) {
   const data = await getInvoicesDetail(Number(params?.id));
 
   const result = await deleteInvoicesDetail(data?.id);
-  console.log("result :>> ", result);
+  // console.log("result :>> ", result);
 
   if (result?.ok) {
     redirect("/");
