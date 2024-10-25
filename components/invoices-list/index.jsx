@@ -5,7 +5,6 @@ import "./invoices-list.css";
 import { formatDate } from "@/utils/format-date";
 import { useEffect, useState } from "react";
 
-// sayfada kac invoice gosterilecegi kisim
 const itemPerPage = 4;
 
 export default function InvoicesList({ data }) {
@@ -14,17 +13,14 @@ export default function InvoicesList({ data }) {
   const [totalItems, setTotalItems] = useState(data.length);
 
   useEffect(() => {
-    // datanın baslangıc ve bitis kismi yani hangi araligin gosterilecegi kisim
     const start = (currentPage - 1) * itemPerPage;
     const end = start + itemPerPage;
 
     setPaginatedData(data.slice(start, end));
   }, [currentPage, data]);
 
-  // ne kadar buton gozukecegini belirleyen kisim
   const totalPages = Math.ceil(totalItems / itemPerPage);
 
-  // sonraki sayfaya gecis kismi
   function handlePageChange(pageNumber) {
     setCurrentPage(pageNumber);
   }

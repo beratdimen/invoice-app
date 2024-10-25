@@ -1,0 +1,23 @@
+.confirm {
+
+  form {
+
+    .item-list {
+
+      .add-new-button {
+
+        background-color: #F9FAFE;
+
+      }
+
+    }
+
+    .confirmButtons button:last-child {
+
+      background-color: #7C5DFA;
+      color: white;
+
+    }
+
+  }
+}

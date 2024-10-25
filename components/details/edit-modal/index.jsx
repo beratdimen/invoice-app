@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import "../details-page.css";
 import InvoiceAddPage from "@/components/invoice-form/new-invoices";
+import "./edit.css"
 
 export default function DetailEditModal({ data, dataAll }) {
   // console.log("data :>> ", data);
