@@ -8,7 +8,7 @@
     justify-content: space-between;
 
     h2 {
-      color: #0C0E16;
+      color: var(--textColor);
       font-size: 24px;
       font-weight: 700;
       line-height: 22.08px;
@@ -19,7 +19,7 @@
       margin-right: auto;
 
       span {
-        color: #888EB0;
+        color: var(--opacityTextColor);
         font-size: 13px;
         font-weight: 500;
         line-height: 15px;
@@ -30,7 +30,7 @@
 
   .filter {
     p {
-      color: #0C0E16;
+      color: var(--textColor);
       font-size: 15px;
       font-weight: 700;
       line-height: 15px;
@@ -44,27 +44,28 @@
       display: none;
 
       p {
+        color: var(--textColor);
         display: flex;
         align-items: center;
         width: fit-content;
       }
     }
-    
+
     &:hover .filter-options {
       display: flex;
       flex-direction: column;
       gap: 16px;
       position: absolute;
       padding: 24px;
-      background-color: #FFFFFF;
-      box-shadow: 0px 10px 20px 0px #48549F40;
+      background-color: var(--cardBackGorundColor);
+      box-shadow: 0px 10px 20px 0px #48549f40;
       border-radius: 8px;
     }
   }
 
   button {
-    color: #FFFFFF;
-    background-color: #7C5DFA;
+    color: #ffffff;
+    background-color: var(--buttonBackGroundColor);
     padding: 8px 14px 8px 8px;
     border: none;
     display: flex;
@@ -79,7 +80,7 @@
 }
 
 dialog {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   height: 100vh;
   border: none;
   padding: 0px 24px;
@@ -87,9 +88,8 @@ dialog {
   top: 80px;
   max-width: 640px;
 
-
   .back-button {
-    color: #0C0E16;
+    color: #0c0e16;
     display: flex;
     gap: 23px;
     align-items: center;
@@ -109,20 +109,19 @@ dialog {
   &::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   &::-webkit-scrollbar-thumb {
-    background-color: #DFE3FA;
+    background-color: #dfe3fa;
     border-radius: 10px;
     border: 2px solid transparent;
   }
-
 }
 
-@media(width >= 1110px) {
+@media (width >= 1110px) {
   .main-page {
     .add-invoices-header {
       margin: 64px auto;

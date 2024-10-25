@@ -52,84 +52,86 @@ export default function Details({ data, dataAll }) {
             </button>
           </div>
         </div>
-        <div className="idAddress">
-          <div className="billIdnCat">
-            <h3>
-              <strong>{data?.invoiceName}</strong>
-            </h3>
-            <p>{data?.description}placeholder</p>
-          </div>
-          <div className="companyAddress">
-            <p>placeholder</p>
-            <p>placeholder</p>
-            <p>placeholder</p>
-            <p>placeholder</p>
-          </div>
-        </div>
-        <div className="desktopAddressMail">
-          <div className="desktopAdress">
-            <div className="dateDue">
-              <div className="billDate">
-                <p>Fatura Tarihi</p>
-                <strong>placeholder</strong>
-              </div>
-              <div className="billDate">
-                <p>Ödeme Tarihi</p>
-                <strong>placeholder</strong>
-              </div>
+        <div className="generalDetail">
+          <div className="idAddress">
+            <div className="billIdnCat">
+              <h3>
+                <strong>{data?.invoiceName}</strong>
+              </h3>
+              <p>{data?.description}placeholder</p>
             </div>
-            <div className="customerInfo">
-              <div className="customer">
-                <p>Fatura Sahibi</p>
-                <strong>placeholder</strong>
-              </div>
-              <div className="companyAddress">
-                <p>{data?.client?.address}</p>
-                <p>{data?.client?.city}</p>
-                <p>{data?.client?.postCode}</p>
-                <p>{data?.client?.country}</p>
-              </div>
+            <div className="companyAddress">
+              <p>placeholder</p>
+              <p>placeholder</p>
+              <p>placeholder</p>
+              <p>placeholder</p>
             </div>
           </div>
-          <div className="customerEmail">
-            <p>Gönderilen</p>
-            <strong>{data?.client?.email}</strong>
-          </div>
-        </div>
-        <div className="cart">
-          <div className="cartSections">
-            <p>Ürün Adı</p>
-            <p>Adet</p>
-            <p>Fiyat</p>
-            <p>Toplam</p>
-          </div>
-          {data?.items.map((item, index) => (
-            <div className="cartItemDesktop" key={index}>
-              <strong>{item?.name}</strong>
-              <p>{item?.quantity}</p>
-              <p>£{item?.price}</p>
-              <strong>£{item?.quantity * item?.price}</strong>
+          <div className="desktopAddressMail">
+            <div className="desktopAdress">
+              <div className="dateDue">
+                <div className="billDate">
+                  <p>Fatura Tarihi</p>
+                  <strong>placeholder</strong>
+                </div>
+                <div className="billDate">
+                  <p>Ödeme Tarihi</p>
+                  <strong>placeholder</strong>
+                </div>
+              </div>
+              <div className="customerInfo">
+                <div className="customer">
+                  <p>Fatura Sahibi</p>
+                  <strong>placeholder</strong>
+                </div>
+                <div className="companyAddress">
+                  <p>{data?.client?.address}</p>
+                  <p>{data?.client?.city}</p>
+                  <p>{data?.client?.postCode}</p>
+                  <p>{data?.client?.country}</p>
+                </div>
+              </div>
             </div>
-          ))}
-          {data?.items.map((item, index) => (
-            <div className="cartItem" key={index}>
-              <div className="item">
+            <div className="customerEmail">
+              <p>Gönderilen</p>
+              <strong>{data?.client?.email}</strong>
+            </div>
+          </div>
+          <div className="cart">
+            <div className="cartSections">
+              <p>Ürün Adı</p>
+              <p>Adet</p>
+              <p>Fiyat</p>
+              <p>Toplam</p>
+            </div>
+            {data?.items.map((item, index) => (
+              <div className="cartItemDesktop" key={index}>
                 <strong>{item?.name}</strong>
-                <p>
-                  {item?.quantity} x £ {item?.price}
-                </p>
+                <p>{item?.quantity}</p>
+                <p>£{item?.price}</p>
+                <strong>£{item?.quantity * item?.price}</strong>
               </div>
-              <strong>£ {item?.quantity * item?.price}</strong>
+            ))}
+            {data?.items.map((item, index) => (
+              <div className="cartItem" key={index}>
+                <div className="item">
+                  <strong>{item?.name}</strong>
+                  <p>
+                    {item?.quantity} x £ {item?.price}
+                  </p>
+                </div>
+                <strong>£ {item?.quantity * item?.price}</strong>
+              </div>
+            ))}
+            <div className="grandTotal">
+              <p>Ödenecek Tutar</p>
+              <h2>
+                £
+                {data?.items?.reduce((acc, item) => {
+                  return acc + item.price * item.quantity;
+                }, 0)}
+              </h2>
             </div>
-          ))}
-          <div className="grandTotal">
-            <p>Ödenecek Tutar</p>
-            <h2>
-              £
-              {data?.items?.reduce((acc, item) => {
-                return acc + item.price * item.quantity;
-              }, 0)}
-            </h2>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import "./invoices-list.css";
@@ -27,13 +27,13 @@ export default function InvoicesList({ data }) {
   // sonraki sayfaya gecis kismi
   function handlePageChange(pageNumber) {
     setCurrentPage(pageNumber);
-  };
+  }
 
   return (
-    <div className="invoices-list">
+    <div className={`invoices-list`}>
       <div className="invoices">
         {paginatedData.map((x) => (
-          <Link key={x.id} href={`/detail/${x.id}`} className="invoice-card">
+          <Link key={x.id} href={`/detail/${x.id}`} className={`invoice-card`}>
             <div className="card-header">
               <h2>
                 <span>#</span>
@@ -74,13 +74,19 @@ export default function InvoicesList({ data }) {
       </div>
 
       {/* burada hata aliyodum gpt cozdu pek anlamadim */}
-      <div className="pagination">
-        {[...Array(totalPages)].map((x, i) => (
-          <button key={i} onClick={() => handlePageChange(i + 1)} disabled={currentPage === i + 1}>
-            {i + 1}
-          </button>
-        ))} 
-      </div>
+      {paginatedData.length > 0 && (
+        <div className="pagination">
+          {[...Array(totalPages)].map((x, i) => (
+            <button
+              key={i}
+              onClick={() => handlePageChange(i + 1)}
+              disabled={currentPage === i + 1}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="empty-container">
         <img src="../img/emptyImage.png" alt="emptyImage" />

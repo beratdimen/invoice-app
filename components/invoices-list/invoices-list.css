@@ -11,8 +11,8 @@
   }
 
   .invoice-card {
-    background-color: #FFFFFF;
-    box-shadow: 0px 10px 10px -10px #48549F1A;
+    background-color: var(--cardBackGorundColor);
+    box-shadow: 0px 10px 10px -10px #48549f1a;
     margin-inline: 24px;
     border-radius: 8px;
     padding: 24px;
@@ -27,7 +27,7 @@
       justify-content: space-between;
 
       h2 {
-        color: #0C0E16;
+        color: var(--textColor);
         font-size: 15px;
         font-weight: 700;
         line-height: 15px;
@@ -35,12 +35,12 @@
         text-align: left;
 
         span {
-          color: #7E88C3;
+          color: var(--opacityTextColor);
         }
       }
 
       p {
-        color: #858BB2;
+        color: var(--opacityTextColor);
         font-size: 13px;
         font-weight: 500;
         line-height: 15px;
@@ -58,7 +58,7 @@
         flex-direction: column;
         gap: 9px;
         p {
-          color: #888EB0;
+          color: var(--opacityTextColor);
           font-size: 13px;
           font-weight: 500;
           line-height: 15px;
@@ -66,7 +66,7 @@
         }
 
         h3 {
-          color: #0C0E16;
+          color: var(--textColor);
           font-size: 15px;
           font-weight: 700;
           line-height: 24px;
@@ -76,8 +76,8 @@
 
       .situation {
         .pending {
-          color: #FF8F00;
-          background-color: #fff9f0;
+          color: var(--pendingTextColor);
+          background-color: var(--pendingBgColor);
           padding: 14px 19px;
           border-radius: 6px;
           font-size: 15px;
@@ -87,8 +87,8 @@
         }
 
         .paid {
-          color: #33D69F;
-          background-color: #f3fdfa;
+          color: var(--paidTextColor);
+          background-color: var(--paidBgColor);
           padding: 14px 19px;
           border-radius: 6px;
           font-size: 15px;
@@ -98,8 +98,8 @@
         }
 
         .draft {
-          color: #373B53;
-          background-color: #f4f4f5;
+          color: var(--draftTextColor);
+          background-color: var(--draftBgColor);
           padding: 14px 19px;
           border-radius: 6px;
           font-size: 15px;
@@ -113,13 +113,14 @@
 
   .pagination {
     margin: 0 auto;
-    box-shadow: 0px 10px 10px -10px #48549F1A;
+    box-shadow: 0px 10px 10px -10px #48549f1a;
     border-radius: 24px;
 
     button {
       border: none;
       padding: 8px 16px;
-      background-color: #FFFFFF;
+      background-color: #ffffff;
+      color: var(--paginationButtonTextColor);
 
       &:first-child {
         border-radius: 10px 0px 0px 10px;
@@ -130,16 +131,16 @@
       }
 
       &:disabled {
-        background-color: #7C5DFA;
-        color: #FFFFFF;
+        background-color: var(--paginationButtonBgColor);
+        color: var(--paginationButtonTextColor);
       }
     }
   }
-  
+
   &:has(.invoice-card) .empty-container {
     display: none;
   }
-  
+
   &:not(:has(.invoice-card)) .empty-container {
     width: 244px;
     margin: 0 auto;
@@ -149,22 +150,22 @@
     align-items: center;
     text-align: center;
     gap: 42px;
-  
+
     .empty-texts {
       display: flex;
       flex-direction: column;
       gap: 23px;
-  
+
       h2 {
-        color: #0C0E16;
+        color: var(--textColor);
         font-size: 24px;
         font-weight: 700;
         line-height: 22.08px;
         letter-spacing: -0.75px;
       }
-  
+
       p {
-        color: #888EB0;
+        color: #888eb0;
         font-size: 13px;
         font-weight: 500;
         line-height: 15px;
@@ -174,25 +175,25 @@
   }
 }
 
-@media(width >= 1110px) {
+@media (width >= 1110px) {
   .invoices-list {
     .invoice-card {
       margin-inline: 0px;
       flex-direction: row;
       justify-content: left;
       gap: 75px;
-  
+
       .card-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 44px;
-  
+
         h2 {
           min-width: 65px;
         }
       }
-  
+
       .card-content {
         gap: 40px;
         flex: 1;
@@ -201,7 +202,7 @@
           flex-direction: row;
           align-items: center;
           gap: 110px;
-  
+
           h3 {
             min-width: 100px;
             text-align: end;

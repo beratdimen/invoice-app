@@ -8,7 +8,7 @@ export default async function Home() {
   const data = await getInvoices();
 
   return (
-    <div className="container">
+    <div className={`container`}>
       <Header />
 
       <div className="main-page-content">

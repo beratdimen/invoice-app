@@ -1,9 +1,17 @@
-@media(width >= 1110px) {
-    .container {
-        display: flex;
-    }
-
-    .main-page-content {
-        margin: 0 auto;
-    }
+@media (width >= 1110px) {
+  .container {
+    display: flex;
   }
+
+  .main-page-content {
+    margin: 0 auto;
+  }
+}
+
+.container.dark {
+  background-color: #000000;
+}
+
+.main-page-content.dark {
+  background-color: #141625;
+}

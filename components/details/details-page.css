@@ -1,5 +1,5 @@
 h3 {
-  color: #7e88c3;
+  color: var(--textColor);
 }
 
 strong {
@@ -8,7 +8,7 @@ strong {
   line-height: 20px;
   letter-spacing: -0.25px;
   text-align: left;
-  color: #0c0e16;
+  color: var(--textColor);
 }
 
 p {
@@ -17,7 +17,7 @@ p {
   line-height: 18px;
   letter-spacing: -0.10000000149011612px;
   text-align: left;
-  color: #7e88c3;
+  color: var(--opacityTextColor);
 }
 
 .grandTotal {
@@ -53,8 +53,8 @@ p {
 
 .situation {
   .pending {
-    color: #ff8f00;
-    background-color: #fff9f0;
+    color: var(--pendingTextColor);
+    background-color: var(--pendingBgColor);
     padding: 14px 19px;
     border-radius: 6px;
     font-size: 15px;
@@ -64,8 +64,8 @@ p {
   }
 
   .paid {
-    color: #33d69f;
-    background-color: #f3fdfa;
+    color: var(--paidTextColor);
+    background-color: var(--paidBgColor);
     padding: 14px 19px;
     border-radius: 6px;
     font-size: 15px;
@@ -75,8 +75,8 @@ p {
   }
 
   .draft {
-    color: #373b53;
-    background-color: #f4f4f5;
+    color: var(--draftTextColor);
+    background-color: var(--draftBgColor);
     padding: 14px 19px;
     border-radius: 6px;
     font-size: 15px;
@@ -89,7 +89,7 @@ p {
 .customer {
   margin-bottom: 7px;
 
-  p{
+  p {
     margin-bottom: 13px;
   }
 }
@@ -163,10 +163,6 @@ p {
   gap: 8px;
 }
 
-.cart {
-  margin-bottom: 80px;
-}
-
 .billDatenAddress {
   display: flex;
   gap: 61px;
@@ -185,6 +181,7 @@ p {
   padding-inline: 24px;
   max-width: 730px;
   margin: 0 auto;
+  padding-bottom: 80px;
 }
 
 .contentContainer {
@@ -230,7 +227,6 @@ button:last-child {
 .status {
   display: flex;
   justify-content: space-between;
-  padding: 37px 0;
   margin-bottom: 16px;
 
   span {
@@ -256,7 +252,7 @@ button:last-child {
     line-height: 15px;
     letter-spacing: -0.25px;
     text-align: left;
-    color: black;
+    color: var(--goBackTextColor);
   }
 }
 
@@ -298,6 +294,12 @@ button:last-child {
   gap: 8px;
 }
 
+.generalDetail {
+  background-color: var(--cardBackGorundColor);
+  padding: 32px;
+  border-radius: 16px;
+}
+
 @media (width>= 768px) {
   .detailsContainer {
     padding-inline: 32px;
@@ -309,7 +311,6 @@ button:last-child {
   }
 
   .companyAddress {
-
     p {
       text-align: right;
     }
@@ -331,12 +332,12 @@ button:last-child {
 
   .cartSections {
     display: grid;
-   grid-template-columns: 5fr 1fr 1fr 1fr;
-   gap: 70px;
-   padding-inline: 32px;
-   p {
-    text-align: right;
-   }
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    gap: 70px;
+    padding-inline: 32px;
+    p {
+      text-align: right;
+    }
   }
 
   .cartSections p:first-child {
@@ -344,19 +345,19 @@ button:last-child {
   }
 
   .cartItemDesktop {
-   display: grid;
-   grid-template-columns: 5fr 1fr 1fr 1fr;
-   padding-inline: 32px;
-   gap: 70px;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    padding-inline: 32px;
+    gap: 70px;
 
-   strong {
-    display: block;
-   }
+    strong {
+      display: block;
+    }
 
-   p {
-    display: block;
-    text-align: right;
-   }
+    p {
+      display: block;
+      text-align: right;
+    }
   }
 
   .cartItemDesktop strong:last-child {
@@ -367,8 +368,9 @@ button:last-child {
     display: grid;
     gap: 32px;
     text-align: right;
+    background-color: var(--cartDetailItemBgColor);
+    padding: 32px;
   }
-
 
   .mobile {
     display: none;
@@ -380,11 +382,15 @@ button:last-child {
   .detailsButtons {
     width: 309px;
   }
+
   .desktopButtons {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 56px;
+    background-color: var(--cardBackGorundColor);
+    padding: 24px 32px;
+    border-radius: 16px;
   }
 
   .status {
@@ -403,6 +409,7 @@ button:last-child {
     justify-content: space-between;
     margin-bottom: 21px;
   }
+
   .contentContainer {
     padding: 32px;
   }
@@ -429,6 +436,4 @@ button:last-child {
   .cart {
     margin-bottom: 0;
   }
-
-
 }

@@ -40,7 +40,7 @@ export default function MainPage({ data }) {
 
   return (
     <>
-      <div className="main-page">
+      <div className={`main-page `}>
         <div className="add-invoices-header">
           <h2>
             Faturalar <span>{data?.length} Fatura</span>

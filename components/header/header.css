@@ -9,13 +9,13 @@
     margin-right: auto;
   }
 
-  .dark-mode {
-    padding: 24px;
-    border-right: 1px solid #494e6e;
-  }
-
   .profile-picture {
     margin: 24px;
+  }
+
+  button {
+    border: none;
+    background: transparent;
   }
 }
 

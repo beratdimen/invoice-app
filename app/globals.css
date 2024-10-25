@@ -1,4 +1,36 @@
 /* CSS RESET */
+:root {
+  --background: #f8f8fb;
+  --buttonBackGroundColor: #7c5dfa;
+  --cardBackGorundColor: #ffffff;
+  --textColor: #0c0e16;
+  --opacityTextColor: #888eb0;
+  --pendingBgColor: #ff8f0060;
+  --pendingTextColor: #ff8f00;
+  --draftBgColor: #f3f3f560;
+  --draftTextColor: #373b53;
+  --paidBgColor: #f3fdfa;
+  --paidTextColor: #33d69f;
+  --paginationButtonBgColor: #7c5dfa;
+  --paginationButtonTextColor: black;
+  --goBackTextColor: black;
+  --cartDetailItemBgColor: #f9fafe;
+}
+[data-theme="dark"] {
+  --background: #141625;
+  --cardBackGorundColor: #1e2139;
+  --textColor: #ffffff;
+  --opacityTextColor: #dfe3fa;
+  --pendingBgColor: #2b273660;
+  --draftBgColor: #292c4460;
+  --draftTextColor: #dfe3fa;
+  --paidBgColor: #1f2b3f;
+  --goBackTextColor: #888eb0;
+  --cartDetailItemBgColor: #252945;
+}
+
+/*#1f2b3f paid*/
+/*#292c44 draft*/
 *,
 *::before,
 *::after {
@@ -12,6 +44,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background: var(--background);
 }
 
 img,
@@ -47,7 +80,6 @@ h6 {
 
 body {
   font-family: system-ui;
-  background-color: #f8f8fb;
 }
 
 h3 {
@@ -78,7 +110,8 @@ select {
   border: 1px solid #dfe3fa;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
