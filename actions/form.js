@@ -58,9 +58,7 @@ export default async function FormValidation(prevState, formData, page, id) {
     };
 
     // console.log("editInvoiceData :>> ", JSON.stringify(editInvoiceData));
-    const responseInvoince = await postInvoinces(
-      JSON.stringify(editInvoiceData)
-    );
+    const responseInvoince = await postInvoinces(editInvoiceData);
     // console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
 
     if (!responseInvoince) {
@@ -101,7 +99,7 @@ export default async function FormValidation(prevState, formData, page, id) {
     };
 
     // console.log("invoiceData :>> ", JSON.stringify(invoiceData));
-    const responseInvoince = await postInvoinces(JSON.stringify(invoiceData));
+    const responseInvoince = await postInvoinces(clientData);
     // console.log("responseInvoince :>> ", JSON.stringify(responseInvoince));
 
     if (!responseInvoince) {

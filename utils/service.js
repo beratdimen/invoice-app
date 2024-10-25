@@ -29,30 +29,30 @@ export const deleteInvoicesDetail = async (id) => {
 };
 
 export const postInvoinces = async (formData) => {
-  // console.log("formData :>> ", formData);
+  console.log("formData :>> ", formData);
 
-  const response = await fetch('https://invoiceapp.bariscakdi.com.tr/SaveClient', {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      accept: "text/plain",
-      "Cache-Control": "no-cache",
-    },
-    cache: "no-store",
-    body: {
-      name: formData.userName,
-      email: formData.userEmail,
-      address: formData.userAddress,
-      city: formData.city,
-      postCode: Number(formData.postCode),
-      country: formData.country
+  const response = await fetch(
+    "https://invoiceapp.bariscakdi.com.tr/SaveClient",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "text/plain",
+      },
+      body: JSON.stringify({
+        id: 0,
+        name: formData.name,
+        email: formData.email,
+        address: formData.address,
+        city: formData.city,
+        postCode: Number(formData.postCode),
+        country: formData.country,
+      }),
     }
-  }
-  )
+  );
 
- ;
+  console.log(response, "deneme deneme deneme");
 
-  console.log(response);
   const response2 = await advancedFetch(
     `api/Invoice/SaveInvoice`,
     "POST",
