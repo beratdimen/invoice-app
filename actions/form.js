@@ -73,6 +73,20 @@ export default async function FormValidation(prevState, formData, page, id) {
       city: formObj.city,
       postCode: formObj.postCode,
       country: formObj.country,
+      invoiceName: formObj.fromStreet,
+      description: formObj.projectDescription,
+      createdTime: formObj.invoiceDate,
+      items: [
+        {
+          name: formObj.itemName,
+          quantity: formObj.qty,
+          price: formObj.price,
+          total: formObj.qty * formObj.price,
+        },
+      ],
+      paymentStatus: 1,
+      clientId: 1, //responseClient?.id,
+      paymentTerm: Number(formObj.paymentDate),
     };
 
     // console.log("clientData :>> ", clientData);

@@ -50,17 +50,52 @@ export const postInvoinces = async (formData) => {
       }),
     }
   );
+  
+  const response2 = await fetch("https://invoiceapp.bariscakdi.com.tr/api/Client/GetClients");
+  const data2 = await response2.json();
 
-  console.log(response, "deneme deneme deneme");
+  const filtered = data2.find(x=> x.email === formData.email);
+  const filteredId = await filtered.id
+  console.log(filteredId);
+  console.log(formData);
+  
+  
+  const response3 = await fetch("https://invoiceapp.bariscakdi.com.tr/api/Invoice/SaveInvoice",{
+    method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "text/plain",
+      },
+    body: JSON.stringify({
+      id: 0,
+      invoiceName: "string",
+      description: formData.description,
+      paymentStatus: formData.paymentStatus,
+      paymentTerm: formData.paymentTerm,
+      paymentDue: "2024-11-25T19:39:36.591Z",
+      clientId: filteredId,
+      items: [
+        {
+          id:0,
+          name: formData.items[0].name,
+          quantity: formData.items[0].quantity,
+          price: formData.items[0].price
+      }
+    ]
+    })
+  })
+  
+  console.log(response3);
+  
 
-  const response2 = await advancedFetch(
-    `api/Invoice/SaveInvoice`,
-    "POST",
-    formData
-  );
+  // const response2 = await advancedFetch(
+  //   `api/Invoice/SaveInvoice`,
+  //   "POST",
+  //   formData
+  // );
   // console.log("response :>> ", response);
   // console.log("eklenmis olabilirim :>> ");
-  return response;
+  return response3;
 };
 
 export const updateInvoinces = async (formData) => {
