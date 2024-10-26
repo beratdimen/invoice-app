@@ -3,7 +3,7 @@
 import { advancedFetch } from "./fetchGet";
 
 export const getInvoices = async () => {
-  const response = await advancedFetch("Invoices");
+  const response = await advancedFetch("Invoices?page=1&pageSize=200");
   return response;
 };
 
