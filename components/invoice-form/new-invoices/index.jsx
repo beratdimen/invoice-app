@@ -75,8 +75,8 @@ export default function InvoiceAddPage({
             onBlur={(e) => setSelectedUser(e.target.value)}
             onClick={handleInput}
           >
-            {searchedUsers.map((x) => (
-              <option value={x?.id}>
+            {searchedUsers.map((x, index) => (
+              <option value={x?.id} key={index}>
                 {x.name}- {x.address}
               </option>
             ))}
